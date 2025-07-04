@@ -138,6 +138,53 @@
 	<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="classicplaysports.com/wp-content/plugins/js_composer_salient/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]-->
 	<script id="ze-snippet" src="js/snippet.js"> </script>
 	<!-- End of hdfmedical Zendesk Widget script -->
+	<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".wpcf7-form");
+  const messageBox = document.getElementById("form-message");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // stop actual submission
+
+    // Reset messages
+    messageBox.innerHTML = "";
+    messageBox.style.color = "red";
+
+    // Get fields
+    const name = form.querySelector('[name="your-name"]');
+    const email = form.querySelector('[name="email"]');
+    const tel = form.querySelector('[name="tel"]');
+    const textarea = form.querySelector('[name="textarea"]');
+
+    let messages = [];
+
+    // Validation
+    if (!name.value.trim()) messages.push("Name is required.");
+    if (!email.value.trim()) {
+      messages.push("Email is required.");
+    } else if (!/\S+@\S+\.\S+/.test(email.value)) {
+      messages.push("Enter a valid email.");
+    }
+    if (!tel.value.trim()) messages.push("Telephone is required.");
+    if (!textarea.value.trim()) messages.push("Message is required.");
+
+    // Show messages
+    if (messages.length > 0) {
+      messageBox.innerHTML = messages.map(msg => `<div>${msg}</div>`).join("");
+    } else {
+      // All fields are valid
+      messageBox.style.color = "green";
+      messageBox.innerHTML = "Form submitted successfully!";
+      form.reset(); // Clear form fields
+
+      // Optional: send form data via AJAX if needed
+      // OR allow default form action to proceed
+    }
+  });
+});
+</script>
+
+
 </head>
 
 
@@ -1494,7 +1541,7 @@
 															<h3 style="text-align: left;">visit our office</h3>
 															<ul style="text-align: left;">
 																<li>
-																	<h2>     Classic Play Sports</h2>
+																	<h2>Classic Play Sports</h2>
 																</li>
 																<li><span style="color: #799b0a;">Address:
 																	</span> Guhadpur Sialkot Pakistan</li>
@@ -1521,23 +1568,23 @@
 														<div class="wpb_wrapper">
 															<div class="nectar-social full-width items_3"><a
 																	class="facebook" title="Facebook"
-																	href="https://facebook.com/share/19HjkNYNjU/"
+																	href="#"
 																	target="_blank" rel="noopener noreferrer"> <i
 																		class="fa fa-facebook">Facebook</i> </a> <a
 																	class="instagram" title="Instagram"
-																	href="https://www.instagram.com/classicplaysport?igsh=M2pseWFpcXA2NXVu"
+																	href="#"
 																	target="_blank" rel="noopener noreferrer"> <i
 																		class="fa fa-instagram">Instagram</i> </a> <a
 																	class="linkedin" title="Linkedin"
-																	href="https://www.linkedin.com/in/classic-play-sports-54ab25370?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+																	href="#"
 																	target="_blank" rel="noopener noreferrer"> <i
 																		class="fa fa-linkedin">LinkedIn</i> </a><a
 																	class="tiktok" title="Tiktok"
-																	href="https://www.tiktok.com/@classic.play.sports"
+																	href="#"
 																	target="_blank" rel="noopener noreferrer"> <i
 																		class="fa fa-music">"Tiktok"</i> </a><a
 																	class="youtube" title="Youtube"
-																	href="https://www.linkedin.com/in/farrukh-hafeez-76808137/"
+																	href="#"
 																	target="_blank" rel="noopener noreferrer"> <i
 																		class="fa fa-youtube">"Youtube"</i> </a></div>
 
@@ -1561,58 +1608,50 @@
 													<div role="form" class="wpcf7" id="wpcf7-f6-p910-o2" lang="en-US"
 														dir="ltr">
 														<div class="screen-reader-response"></div>
-														<form action="/#wpcf7-f6-p910-o2" method="post"
+														<form action="" method="post"
 															class="wpcf7-form" novalidate="novalidate">
-															<div style="display: none;">
-																<input type="hidden" name="_wpcf7" value="6">
-																<input type="hidden" name="_wpcf7_version"
-																	value="5.1.1">
-																<input type="hidden" name="_wpcf7_locale" value="en_US">
-																<input type="hidden" name="_wpcf7_unit_tag"
-																	value="wpcf7-f6-p910-o2">
-																<input type="hidden" name="_wpcf7_container_post"
-																	value="910">
-																<input type="hidden" name="g-recaptcha-response"
-																	value="">
-															</div>
+											
 															<div class="form-field ">
-																<span class="wpcf7-form-control-wrap your-name"><input
+																<span class="wpcf7-form-control-wrap your-name">
+																	<input
 																		type="text" name="your-name" value="" size="40"
 																		class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required input-field"
 																		aria-required="true" aria-invalid="false"
-																		placeholder="Name *"></span>
+																		placeholder="Name *" required></span>
 															</div>
 															<div class="form-field ">
 																<span class="wpcf7-form-control-wrap email"><input
 																		type="email" name="email" value="" size="40"
 																		class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email input-field"
 																		aria-required="true" aria-invalid="false"
-																		placeholder="E-mail *"></span>
+																		placeholder="E-mail *" required></span>
 															</div>
 															<div class="form-field ">
 																<span class="wpcf7-form-control-wrap tel"><input
 																		type="tel" name="tel" value="" size="40"
 																		class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel input-field"
 																		aria-invalid="false"
-																		placeholder="Telephone*"></span>
+																		placeholder="Telephone*" required></span>
 															</div>
 															<div class="form-text-area">
 																<span class="wpcf7-form-control-wrap textarea"><textarea
 																		name="textarea" cols="40" rows="10"
 																		class="wpcf7-form-control wpcf7-textarea input-textarea"
 																		aria-invalid="false"
-																		placeholder="Message*"></textarea></span>
+																		placeholder="Message*" required></textarea></span>
 															</div>
 															<div class="form-butn">
-																<input type="submit" value="SEND IT"
-																	class="wpcf7-form-control wpcf7-submit submit-butn">
+																<div id="form-message" style="margin-top: 10px; font-weight: bold;"></div>
+																<input type="submit" value="SEND IT" class="">
 															</div>
-															<div class="wpcf7-response-output wpcf7-display-none"></div>
+															
 														</form>
 													</div>
 												</div>
 											</div>
 										</div>
+
+
 									</div>
 								</div>
 							</div>
