@@ -3980,3 +3980,6 @@ body[data-button-style^="rounded"] .wpb_row>.span_12.light .wpb_wrapper .nectar-
 			font-size: 16px;
 			font-weight: 700;
 		}
+		.woocommerce form .form-row .required {
+			visibility: visible;
+		}
