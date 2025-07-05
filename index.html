@@ -12,13 +12,7 @@
 	<!--Shortcut icon-->
 	<title>Classic Play Sports — Performance You Can Wear</title>
 	<link rel="icon" type="image/png" href="images/favicon.png">
-	<meta name="robots" content="max-image-preview:large">
-	<link rel="dns-prefetch" href="//fonts.googleapis.com">
-	<link rel="dns-prefetch" href="//s.w.org">
 
-	<meta property="og:site_name" content="HDF Medical"> 
-	<meta property="og:title" content="Home Page">
-	<meta property="og:type" content="article">
 	<script type="text/javascript">
 		window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/hdfmedical.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.7.12" } };
 		!function (e, a, t) { var n, r, o, i = a.createElement("canvas"), p = i.getContext && i.getContext("2d"); function s(e, t) { var a = String.fromCharCode; p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, e), 0, 0); e = i.toDataURL(); return p.clearRect(0, 0, i.width, i.height), p.fillText(a.apply(this, t), 0, 0), e === i.toDataURL() } function c(e) { var t = a.createElement("script"); t.src = e, t.defer = t.type = "text/javascript", a.getElementsByTagName("head")[0].appendChild(t) } for (o = Array("flag", "emoji"), t.supports = { everything: !0, everythingExceptFlag: !0 }, r = 0; r < o.length; r++)t.supports[o[r]] = function (e) { if (!p || !p.fillText) return !1; switch (p.textBaseline = "top", p.font = "600 32px Arial", e) { case "flag": return s([127987, 65039, 8205, 9895, 65039], [127987, 65039, 8203, 9895, 65039]) ? !1 : !s([55356, 56826, 55356, 56819], [55356, 56826, 8203, 55356, 56819]) && !s([55356, 57332, 56128, 56423, 56128, 56418, 56128, 56421, 56128, 56430, 56128, 56423, 56128, 56447], [55356, 57332, 8203, 56128, 56423, 8203, 56128, 56418, 8203, 56128, 56421, 8203, 56128, 56430, 8203, 56128, 56423, 8203, 56128, 56447]); case "emoji": return !s([55357, 56424, 8205, 55356, 57212], [55357, 56424, 8203, 55356, 57212]) }return !1 }(o[r]), t.supports.everything = t.supports.everything && t.supports[o[r]], "flag" !== o[r] && (t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && t.supports[o[r]]); t.supports.everythingExceptFlag = t.supports.everythingExceptFlag && !t.supports.flag, t.DOMReady = !1, t.readyCallback = function () { t.DOMReady = !0 }, t.supports.everything || (n = function () { t.readyCallback() }, a.addEventListener ? (a.addEventListener("DOMContentLoaded", n, !1), e.addEventListener("load", n, !1)) : (e.attachEvent("onload", n), a.attachEvent("onreadystatechange", function () { "complete" === a.readyState && t.readyCallback() })), (n = t.source || {}).concatemoji ? c(n.concatemoji) : n.wpemoji && n.twemoji && (c(n.twemoji), c(n.wpemoji))) }(window, document, window._wpemojiSettings);
@@ -64,7 +58,7 @@
 	<link rel="EditURI" type="application/rsd+xml" title="RSD" href="classicplaysports.com/xmlrpc.php?rsd">
 	<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="classicplaysports.com/wp-includes/wlwmanifest.xml">
 	<meta name="generator" content="WordPress 5.7.12">
-	<meta name="generator" content="WooCommerce 3.6.7"> 
+	<meta name="generator" content="WooCommerce 3.6.7">
 	<script>
 
 		var fb5_books = [];
@@ -126,50 +120,89 @@
 	<script id="ze-snippet" src="js/snippet.js"> </script>
 	<!-- End of hdfmedical Zendesk Widget script -->
 	<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector(".wpcf7-form");
-  const messageBox = document.getElementById("form-message");
+		document.addEventListener("DOMContentLoaded", function () {
+			const form = document.querySelector(".wpcf7-form");
+			const messageBox = document.getElementById("form-message");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // stop actual submission
+			form.addEventListener("submit", function (e) {
+				e.preventDefault(); // stop actual submission
 
-    // Reset messages
-    messageBox.innerHTML = "";
-    messageBox.style.color = "red";
+				// Reset messages
+				messageBox.innerHTML = "";
+				messageBox.style.color = "red";
 
-    // Get fields
-    const name = form.querySelector('[name="your-name"]');
-    const email = form.querySelector('[name="email"]');
-    const tel = form.querySelector('[name="tel"]');
-    const textarea = form.querySelector('[name="textarea"]');
+				// Get fields
+				const name = form.querySelector('[name="your-name"]');
+				const email = form.querySelector('[name="email"]');
+				const tel = form.querySelector('[name="tel"]');
+				const textarea = form.querySelector('[name="textarea"]');
 
-    let messages = [];
+				let messages = [];
 
-    // Validation
-    if (!name.value.trim()) messages.push("Name is required.");
-    if (!email.value.trim()) {
-      messages.push("Email is required.");
-    } else if (!/\S+@\S+\.\S+/.test(email.value)) {
-      messages.push("Enter a valid email.");
+				// Validation
+				if (!name.value.trim()) messages.push("Name is required.");
+				if (!email.value.trim()) {
+					messages.push("Email is required.");
+				} else if (!/\S+@\S+\.\S+/.test(email.value)) {
+					messages.push("Enter a valid email.");
+				}
+				if (!tel.value.trim()) messages.push("Telephone is required.");
+				if (!textarea.value.trim()) messages.push("Message is required.");
+
+				// Show messages
+				if (messages.length > 0) {
+					messageBox.innerHTML = messages.map(msg => `<div>${msg}</div>`).join("");
+				} else {
+					// All fields are valid
+					messageBox.style.color = "green";
+					messageBox.innerHTML = "Form submitted successfully!";
+					form.reset(); // Clear form fields
+				}
+			});
+		});
+	</script>
+
+
+<script>
+  function scrollToContact() {
+    const contactTarget = document.querySelector('.wpb_wrapper.contact');
+
+    if (contactTarget) {
+      const offset = 80; // fixed space from top (e.g., header height)
+
+      // Calculate top position relative to document
+      const elementTop = contactTarget.getBoundingClientRect().top + window.scrollY;
+
+      // Scroll to that position minus 80px offset
+      window.scrollTo({
+        top: elementTop - offset,
+        behavior: 'smooth'
+      });
     }
-    if (!tel.value.trim()) messages.push("Telephone is required.");
-    if (!textarea.value.trim()) messages.push("Message is required.");
-
-    // Show messages
-    if (messages.length > 0) {
-      messageBox.innerHTML = messages.map(msg => `<div>${msg}</div>`).join("");
-    } else {
-      // All fields are valid
-      messageBox.style.color = "green";
-      messageBox.innerHTML = "Form submitted successfully!";
-      form.reset(); // Clear form fields
-
-      // Optional: send form data via AJAX if needed
-      // OR allow default form action to proceed
-    }
-  });
-});
+  }
 </script>
+
+<script>
+  function scrollToGallery() {
+    const contactTarget = document.querySelector('.extra-padding.gallery');
+
+    if (contactTarget) {
+      const offset = 80; // fixed space from top (e.g., header height)
+
+      // Calculate top position relative to document
+      const elementTop = contactTarget.getBoundingClientRect().top + window.scrollY;
+
+      // Scroll to that position minus 80px offset
+      window.scrollTo({
+        top: elementTop - offset,
+        behavior: 'smooth'
+      });
+    }
+  }
+</script>
+
+
+
 
 
 </head>
@@ -269,10 +302,14 @@ document.addEventListener("DOMContentLoaded", function () {
 										href="#menu">Menu</a></li>
 								<li id="menu-item-913"
 									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-913"><a
-										href="#gallery">Gallery</a></li>
+									href="javascript:void(0)" onclick="scrollToGallery()"	
+									
+										>Gallery</a></li>
 								<li id="menu-item-914"
 									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-914"><a
-										href="#contact">Contact</a></li>
+										
+										href="javascript:void(0)" onclick="scrollToContact()"
+										>Contact</a></li>
 							</ul>
 
 						</nav>
@@ -289,7 +326,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		<div class="cart-outer" data-user-set-ocm="off" data-cart-style="dropdown">
 			<div class="cart-menu-wrap">
 				<div class="cart-menu">
-					 
+
 				</div>
 			</div>
 
@@ -309,19 +346,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 	<div id="ajax-content-wrap">
-
-
 		<div class="container-wrap">
 			<div class="container main-content">
 				<div class="row">
-
-
 					<div id="fws_685c23528495e" data-midnight="dark" data-bg-mobile-hidden=""
 						class="wpb_row vc_row-fluid vc_row standard_section   "
 						style="padding-top: 0px; padding-bottom: 0px; ">
 						<div class="row-bg-wrap" data-bg-animation="none">
 							<div class="inner-wrap ">
-								<div class="row-bg    " style=""></div>
+								<div class="row-bg" style=""></div>
 							</div>
 							<div class="row-bg-overlay"></div>
 						</div>
@@ -432,7 +465,6 @@ document.addEventListener("DOMContentLoaded", function () {
 													<div class="column-bg-overlay"></div>
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
-
 														</div>
 													</div>
 												</div>
@@ -449,13 +481,790 @@ document.addEventListener("DOMContentLoaded", function () {
 													<div class="vc_column-inner">
 														<div class="wpb_wrapper">
 
-															<<div
+															<div
 																class="col span_12 section-title text-align-center extra-padding">
 																<h2>We Are a <span
 																		style="color: #799b0a;">Sportswear</span> Brand
 																	Dedicated to <span
 																		style="color: #799b0a;">Performance</span> and
 																	Style</h2>
+															</div>
+															<div class="clear"></div>
+														</div>
+													</div>
+												</div>
+
+												<div class="vc_col-sm-2 wpb_column column_container vc_column_container col no-extra-padding"
+													data-t-w-inherits="default" data-shadow="none"
+													data-border-radius="none" data-border-animation=""
+													data-border-animation-delay="" data-border-width="none"
+													data-border-style="solid" data-border-color="" data-bg-cover=""
+													data-padding-pos="all" data-has-bg-color="false" data-bg-color=""
+													data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
+													data-animation="" data-delay="0">
+													<div class="column-bg-overlay"></div>
+													<div class="vc_column-inner">
+														<div class="wpb_wrapper">
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div id="fws_685c235285c00" data-midnight="" data-column-margin="default"
+											data-bg-mobile-hidden=""
+											class="wpb_row vc_row-fluid vc_row inner_row standard_section   menufacture-details "
+											style="padding-top: 0px; padding-bottom: 0px; ">
+											<div class="row-bg-wrap">
+												<div class="row-bg   " style=""></div>
+											</div>
+											<div class="col span_12  left">
+												<div style=""
+													class="vc_col-sm-6 wpb_column column_container vc_column_container col no-extra-padding"
+													data-using-bg="true" data-t-w-inherits="default" data-shadow="none"
+													data-border-radius="none" data-border-animation=""
+													data-border-animation-delay="" data-border-width="none"
+													data-border-style="solid" data-border-color="" data-bg-cover=""
+													data-padding-pos="all" data-has-bg-color="false" data-bg-color=""
+													data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
+													data-animation="" data-delay="0">
+													<div class="column-image-bg-wrap" data-bg-animation="none">
+														<div class="inner-wrap">
+															<div class="column-image-bg"
+																style=" background-image: url('images/Surgical-Instruments_large.jpg'); ">
+															</div>
+														</div>
+													</div>
+													<div class="column-bg-overlay"></div>
+													<div class="vc_column-inner">
+														<div class="wpb_wrapper">
+															<div class="img-with-aniamtion-wrap center"
+																data-max-width="100%" data-border-radius="none">
+																<div class="inner"><img data-shadow="none"
+																		data-shadow-direction="middle"
+																		class="img-with-animation skip-lazy "
+																		data-delay="0" height="605" width="500"
+																		data-animation="fade-in" src="images/banner.png"
+																		srcset="images/banner.png 500w, images/201671813311938689-248x300.jpg 248w, images/201671813311938689-188x228.jpg 188w"
+																		sizes="100vw" alt=""></div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<div class="vc_col-sm-6 wpb_column column_container vc_column_container col no-extra-padding"
+													data-t-w-inherits="default" data-shadow="none"
+													data-border-radius="none" data-border-animation=""
+													data-border-animation-delay="" data-border-width="none"
+													data-border-style="solid" data-border-color="" data-bg-cover=""
+													data-padding-pos="all" data-has-bg-color="false" data-bg-color=""
+													data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
+													data-animation="" data-delay="0">
+													<div class="column-bg-overlay"></div>
+													<div class="vc_column-inner">
+														<div class="wpb_wrapper">
+
+															<div
+																class="col span_12 section-title text-align-center extra-padding">
+																<h2>
+																</h2>
+																<h2 style="text-align: left;">Interested to work with
+																	us?
+																</h2>
+															</div>
+															<div class="clear"></div>
+															<div
+																class="wpb_text_column wpb_content_element  menufacture-details">
+																<div class="wpb_wrapper">
+																	<p>While <strong><span
+																				style="color: #799b0a;">Classic
+																				Play Sports</span></strong> is a newly
+																		introduced brand, our mission is clear — to
+																		deliver
+																		high-performance <span
+																			style="color: #799b0a;"><strong>sportswear</strong></span>
+																		that meets the real needs of athletes and teams.
+																		Backed by a passion for innovation and quality,
+																		our
+																		modern production setup allows us to create
+																		stylish,
+																		durable, and functional apparel that brings out
+																		the
+																		best in every player.</p>
+
+																</div>
+															</div>
+															<a class="nectar-button large regular accent-color  regular-button more-detail-btn"
+																style="" href="#" data-color-override="false"
+																data-hover-color-override="false"
+																data-hover-text-color-override="#fff"><span>Contact
+																	us</span></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="fws_685c2352862ce" data-midnight="dark" data-top-percent="13%" data-bottom-percent="7%"
+						data-bg-mobile-hidden=""
+						class="wpb_row vc_row-fluid vc_row full-width-section standard_section  catalogs-block "
+						style="padding-top: calc(100vw * 0.13); padding-bottom: calc(100vw * 0.07); ">
+						<div class="row-bg-wrap" data-bg-animation="none">
+							<div class="inner-wrap ">
+								<div class="row-bg  using-bg-color  " style="background-color: #000000; "></div>
+							</div>
+							<div class="row-bg-overlay"></div>
+						</div>
+						<div class="col span_12 dark left">
+							<div class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding"
+								data-t-w-inherits="default" data-border-radius="none" data-shadow="none"
+								data-border-animation="" data-border-animation-delay="" data-border-width="none"
+								data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all"
+								data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg=""
+								data-hover-bg-opacity="1" data-animation="" data-delay="0">
+								<div class="column-bg-overlay"></div>
+								<div class="vc_column-inner">
+									<div class="wpb_wrapper">
+
+										<div id="menu" data-midnight="" data-column-margin="default"
+											data-bg-mobile-hidden=""
+											class="wpb_row vc_row-fluid vc_row inner_row standard_section   catlog-heading "
+											style="padding-top: 3%; padding-bottom: 5%; ">
+											<div class="row-bg-wrap">
+												<div class="row-bg   " style=""></div>
+											</div>
+											<div class="col span_12  left">
+												<div class="vc_col-sm-2 wpb_column column_container vc_column_container col no-extra-padding"
+													data-t-w-inherits="default" data-shadow="none"
+													data-border-radius="none" data-border-animation=""
+													data-border-animation-delay="" data-border-width="none"
+													data-border-style="solid" data-border-color="" data-bg-cover=""
+													data-padding-pos="all" data-has-bg-color="false" data-bg-color=""
+													data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
+													data-animation="" data-delay="0">
+													<div class="column-bg-overlay"></div>
+													<div class="vc_column-inner">
+														<div class="wpb_wrapper">
+
+														</div>
+													</div>
+												</div>
+
+												<div class="vc_col-sm-8 block-heading wpb_column column_container vc_column_container col centered-text no-extra-padding"
+													data-t-w-inherits="default" data-shadow="none"
+													data-border-radius="none" data-border-animation=""
+													data-border-animation-delay="" data-border-width="none"
+													data-border-style="solid" data-border-color="" data-bg-cover=""
+													data-padding-pos="all" data-has-bg-color="false" data-bg-color=""
+													data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
+													data-animation="" data-delay="0">
+													<div class="column-bg-overlay"></div>
+													<div class="vc_column-inner">
+														<div class="wpb_wrapper">
+
+															<div
+																class="col span_12 section-title text-align-center extra-padding">
+																<h2>
+																	<p style="text-align: center; color: #799b0a;">Our
+																		Sportswear Collections</p>
+																</h2>
+															</div>
+															<div class="clear"></div>
+															<div class="wpb_text_column wpb_content_element ">
+																<div class="wpb_wrapper">
+																	<h5 style="text-align: center; color: #ffffff;">
+																		Browse
+																		our catalogs below to explore our full
+																		sportswear
+																		lineup.
+																		Have questions before ordering? Reach out — our
+																		team
+																		is ready to support you with expert guidance.
+																	</h5>
+
+																</div>
+															</div>
+
+														</div>
+													</div>
+												</div>
+
+												<div class="vc_col-sm-2 wpb_column column_container vc_column_container col no-extra-padding"
+													data-t-w-inherits="default" data-shadow="none"
+													data-border-radius="none" data-border-animation=""
+													data-border-animation-delay="" data-border-width="none"
+													data-border-style="solid" data-border-color="" data-bg-cover=""
+													data-padding-pos="all" data-has-bg-color="false" data-bg-color=""
+													data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
+													data-animation="" data-delay="0">
+													<div class="column-bg-overlay"></div>
+													<div class="vc_column-inner">
+														<div class="wpb_wrapper">
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div id="fws_685c235286900" data-midnight="" data-column-margin="default"
+											data-bg-mobile-hidden=""
+											class="wpb_row vc_row-fluid vc_row inner_row standard_section   catlog-products "
+											style="padding-top: 0px; padding-bottom: 0px; ">
+											<div class="row-bg-wrap">
+												<div class="row-bg   " style=""></div>
+											</div>
+											<div class="col span_12  left">
+												<div class="vc_col-sm-4 catlog-box wpb_column column_container vc_column_container col no-extra-padding"
+													data-t-w-inherits="default" data-shadow="none"
+													data-border-radius="none" data-border-animation=""
+													data-border-animation-delay="" data-border-width="none"
+													data-border-style="solid" data-border-color="" data-bg-cover=""
+													data-padding-pos="all" data-has-bg-color="false" data-bg-color=""
+													data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
+													data-animation="" data-delay="0">
+													<div class="column-bg-overlay"></div>
+													<div class="vc_column-inner">
+														<div class="wpb_wrapper">
+															<div class="img-with-aniamtion-wrap center"
+																data-max-width="100%" data-border-radius="none">
+																<div class="inner"><img data-shadow="none"
+																		data-shadow-direction="middle"
+																		class="img-with-animation skip-lazy "
+																		data-delay="0" height="250" width="258"
+																		data-animation="fade-in"
+																		src="images/football_t.png"
+																		srcset="images/football_t.png 258w, images/eyecare-image-235x228.png 235w"
+																		sizes="100vw" alt=""></div>
+															</div>
+															<div class="wpb_text_column wpb_content_element ">
+																<div class="wpb_wrapper">
+																	<p style="text-align: center; color: #fff;">Football
+																		Kit
+																	</p>
+
+																</div>
+															</div>
+															<a class="nectar-button large regular accent-color  regular-button more-detail-btn"
+																style="margin-right: 20px; margin-left: 50px;"
+																target="_blank"
+																href="classicplaysports.com/hdf-medical-eyecare-2/"
+																data-color-override="false"
+																data-hover-color-override="false"
+																data-hover-text-color-override="#fff"><span>Live
+																	Preview</span></a><a
+																class="nectar-button large regular accent-color  regular-button more-detail-btn1"
+																style="margin-right: 40px; margin-left: 40px;"
+																target="_blank"
+																href="classicplaysports.com/wp-content/uploads/2019/05/HDF-MEDICAL-EYECARE.pdf"
+																data-color-override="false"
+																data-hover-color-override="false"
+																data-hover-text-color-override="#fff"><span>Download</span></a>
+														</div>
+													</div>
+												</div>
+
+												<div class="vc_col-sm-4 catlog-box wpb_column column_container vc_column_container col no-extra-padding"
+													data-t-w-inherits="default" data-shadow="none"
+													data-border-radius="none" data-border-animation=""
+													data-border-animation-delay="" data-border-width="none"
+													data-border-style="solid" data-border-color="" data-bg-cover=""
+													data-padding-pos="all" data-has-bg-color="false" data-bg-color=""
+													data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
+													data-animation="" data-delay="0">
+													<div class="column-bg-overlay"></div>
+													<div class="vc_column-inner">
+														<div class="wpb_wrapper">
+															<div class="img-with-aniamtion-wrap center"
+																data-max-width="100%" data-border-radius="none">
+																<div class="inner"><img data-shadow="none"
+																		data-shadow-direction="middle"
+																		class="img-with-animation skip-lazy "
+																		data-delay="0" height="250" width="258"
+																		data-animation="fade-in"
+																		src="images/cricket.png"
+																		srcset="images/cricket.png 258w, images/medical-image-235x228.png 235w"
+																		sizes="100vw" alt=""></div>
+															</div>
+															<div class="wpb_text_column wpb_content_element ">
+																<div class="wpb_wrapper">
+																	<p style="text-align: center; color: #fff;">Cricket
+																		Kit
+																	</p>
+
+																</div>
+															</div>
+															<a class="nectar-button large regular accent-color  regular-button more-detail-btn"
+																style="margin-right: 20px; margin-left: 50px;"
+																target="_blank"
+																href="classicplaysports.com/hdf-medical-dental-instruments"
+																data-color-override="false"
+																data-hover-color-override="false"
+																data-hover-text-color-override="#fff"><span>Live
+																	Preview</span></a><a
+																class="nectar-button large regular accent-color  regular-button more-detail-btn1"
+																style="margin-left: 30px;" target="_blank"
+																href="classicplaysports.com/wp-content/uploads/2019/05/dental-cat.pdf"
+																data-color-override="false"
+																data-hover-color-override="false"
+																data-hover-text-color-override="#fff"><span>Download</span></a>
+														</div>
+													</div>
+												</div>
+
+												<div class="vc_col-sm-4 catlog-box wpb_column column_container vc_column_container col no-extra-padding"
+													data-t-w-inherits="default" data-shadow="none"
+													data-border-radius="none" data-border-animation=""
+													data-border-animation-delay="" data-border-width="none"
+													data-border-style="solid" data-border-color="" data-bg-cover=""
+													data-padding-pos="all" data-has-bg-color="false" data-bg-color=""
+													data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
+													data-animation="" data-delay="0">
+													<div class="column-bg-overlay"></div>
+													<div class="vc_column-inner">
+														<div class="wpb_wrapper">
+															<div class="img-with-aniamtion-wrap center"
+																data-max-width="100%" data-border-radius="none">
+																<div class="inner"><img data-shadow="none"
+																		data-shadow-direction="middle"
+																		class="img-with-animation skip-lazy "
+																		data-delay="0" height="250" width="258"
+																		data-animation="fade-in" src="images/gloves.png"
+																		srcset="images/gloves.png 258w, images/surgical-image-235x228.png 235w"
+																		sizes="100vw" alt=""></div>
+															</div>
+															<div class="wpb_text_column wpb_content_element ">
+																<div class="wpb_wrapper">
+																	<p style="text-align: center; color: #fff;">Cricket
+																		gloves</p>
+
+																</div>
+															</div>
+															<a class="nectar-button large regular accent-color  regular-button more-detail-btn"
+																style="margin-right: 2px; margin-left: 50px;"
+																target="_blank"
+																href="classicplaysports.com/surgical-instruments/"
+																data-color-override="false"
+																data-hover-color-override="false"
+																data-hover-text-color-override="#fff"><span>Live
+																	Preview</span></a><a
+																class="nectar-button large regular accent-color  regular-button more-detail-btn1"
+																style="margin-left: 30px;" target="_blank"
+																href="classicplaysports.com/wp-content/uploads/2019/05/1-merged.pdf"
+																data-color-override="false"
+																data-hover-color-override="false"
+																data-hover-text-color-override="#fff"><span>Download</span></a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div id="fws_685c2352875d7" data-midnight="" data-column-margin="default"
+											data-bg-mobile-hidden=""
+											class="wpb_row vc_row-fluid vc_row inner_row standard_section   catlog-products "
+											style="padding-top: 0px; padding-bottom: 0px; ">
+											<div class="row-bg-wrap">
+												<div class="row-bg   " style=""></div>
+											</div>
+											<div class="col span_12  left">
+												<div class="vc_col-sm-4 catlog-box wpb_column column_container vc_column_container col no-extra-padding"
+													data-t-w-inherits="default" data-shadow="none"
+													data-border-radius="none" data-border-animation=""
+													data-border-animation-delay="" data-border-width="none"
+													data-border-style="solid" data-border-color="" data-bg-cover=""
+													data-padding-pos="all" data-has-bg-color="false" data-bg-color=""
+													data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
+													data-animation="" data-delay="0">
+													<div class="column-bg-overlay"></div>
+													<div class="vc_column-inner">
+														<div class="wpb_wrapper">
+															<div class="img-with-aniamtion-wrap center"
+																data-max-width="100%" data-border-radius="none">
+																<div class="inner"><img data-shadow="none"
+																		data-shadow-direction="middle"
+																		class="img-with-animation skip-lazy "
+																		data-delay="0" height="250" width="258"
+																		data-animation="fade-in" src="images/cap.png"
+																		srcset="images/cap.png 258w, images/spinal-235x228.png 235w"
+																		sizes="100vw" alt=""></div>
+															</div>
+															<div class="wpb_text_column wpb_content_element ">
+																<div class="wpb_wrapper">
+																	<p style="text-align: center; color: #fff;">sports
+																		cap
+																	</p>
+
+																</div>
+															</div>
+															<a class="nectar-button large regular accent-color  regular-button more-detail-btn"
+																style="margin-right: 20px; margin-left: 50px;"
+																target="_blank"
+																href="classicplaysports.com/spine-instruments/"
+																data-color-override="false"
+																data-hover-color-override="false"
+																data-hover-text-color-override="#fff"><span>Live
+																	Preview</span></a><a
+																class="nectar-button large regular accent-color  regular-button more-detail-btn1"
+																style="margin-right: 40px; margin-left: 40px;"
+																target="_blank"
+																href="classicplaysports.com/wp-content/uploads/2021/06/01-converted.pdf"
+																data-color-override="false"
+																data-hover-color-override="false"
+																data-hover-text-color-override="#fff"><span>Download</span></a>
+														</div>
+													</div>
+												</div>
+
+												<div class="vc_col-sm-4 catlog-box wpb_column column_container vc_column_container col no-extra-padding"
+													data-t-w-inherits="default" data-shadow="none"
+													data-border-radius="none" data-border-animation=""
+													data-border-animation-delay="" data-border-width="none"
+													data-border-style="solid" data-border-color="" data-bg-cover=""
+													data-padding-pos="all" data-has-bg-color="false" data-bg-color=""
+													data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
+													data-animation="" data-delay="0">
+													<div class="column-bg-overlay"></div>
+													<div class="vc_column-inner">
+														<div class="wpb_wrapper">
+															<div class="img-with-aniamtion-wrap center"
+																data-max-width="100%" data-border-radius="none">
+																<div class="inner"><img data-shadow="none"
+																		data-shadow-direction="middle"
+																		class="img-with-animation skip-lazy "
+																		data-delay="0" height="250" width="258"
+																		data-animation="fade-in"
+																		src="images/Hoodies.png"
+																		srcset="images/Hoodies.png 258w, images/electro-235x228.png 235w"
+																		sizes="100vw" alt=""></div>
+															</div>
+															<div class="wpb_text_column wpb_content_element ">
+																<div class="wpb_wrapper">
+																	<p style="text-align: center; color: #fff;">Hoodies
+																	</p>
+
+																</div>
+															</div>
+															<a class="nectar-button large regular accent-color  regular-button more-detail-btn"
+																style="margin-right: 20px; margin-left: 50px;"
+																target="_blank"
+																href="classicplaysports.com/spine-instruments/"
+																data-color-override="false"
+																data-hover-color-override="false"
+																data-hover-text-color-override="#fff"><span>Live
+																	Preview</span></a><a
+																class="nectar-button large regular accent-color  regular-button more-detail-btn1"
+																style="margin-right: 40px; margin-left: 40px;"
+																target="_blank"
+																href="classicplaysports.com/wp-content/uploads/2021/06/01-converted.pdf"
+																data-color-override="false"
+																data-hover-color-override="false"
+																data-hover-text-color-override="#fff"><span>Download</span></a>
+
+
+															<div class="vc_column-inner">
+																<div class="wpb_wrapper">
+																	<div class="text-align-center">
+																		<h2
+																			style="color: #799b0a; font-size: 40px; font-weight: bold;">
+																			MEET OUR STAFF</h2>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="vc_col-sm-2 wpb_column column_container vc_column_container col no-extra-padding"
+															data-t-w-inherits="default" data-shadow="none"
+															data-border-radius="none" data-border-animation=""
+															data-border-animation-delay="" data-border-width="none"
+															data-border-style="solid" data-border-color=""
+															data-bg-cover="" data-padding-pos="all"
+															data-has-bg-color="false" data-bg-color=""
+															data-bg-opacity="1" data-hover-bg=""
+															data-hover-bg-opacity="1" data-animation="" data-delay="0">
+															<div class="column-bg-overlay"></div>
+															<div class="vc_column-inner">
+																<div class="wpb_wrapper">
+
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div id="fws_685c235288f9e" data-midnight=""
+													data-column-margin="default" data-bg-mobile-hidden=""
+													class="wpb_row vc_row-fluid vc_row inner_row standard_section  vc_custom_1553865090338   "
+													style="padding-top: 0px; padding-bottom: 0px; ">
+													<div class="row-bg-wrap">
+														<div class="row-bg   " style=""></div>
+													</div>
+													<div class="col span_12  center">
+														<div style=""
+															class="vc_col-sm-3 employe-detail-box employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
+															data-using-bg="true" data-t-w-inherits="default"
+															data-shadow="none" data-border-radius="none"
+															data-border-animation="" data-border-animation-delay=""
+															data-border-width="none" data-border-style="solid"
+															data-border-color="" data-bg-cover="" data-padding-pos="all"
+															data-has-bg-color="true" data-bg-color="#292929"
+															data-bg-opacity="1" data-hover-bg=""
+															data-hover-bg-opacity="1" data-animation="" data-delay="0">
+															<div class="column-bg-overlay"
+																style="opacity: 1; background-color: #292929;"></div>
+															<div class="vc_column-inner">
+																<div class="wpb_wrapper">
+
+																	<div class="wpb_text_column wpb_content_element ">
+																		<div class="wpb_wrapper">
+																			<h4 style="text-align: center;">Safina Atif
+																			</h4>
+																			<p style="text-align: center;">chief
+																				executive
+																				officer CEO at Classic Play Sports</p>
+
+																		</div>
+																	</div>
+
+																</div>
+															</div>
+														</div>
+
+														<div class="vc_col-sm-3 employe-detail-img employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
+															data-t-w-inherits="default" data-shadow="none"
+															data-border-radius="none" data-border-animation=""
+															data-border-animation-delay="" data-border-width="none"
+															data-border-style="solid" data-border-color=""
+															data-bg-cover="" data-padding-pos="all"
+															data-has-bg-color="false" data-bg-color=""
+															data-bg-opacity="1" data-hover-bg=""
+															data-hover-bg-opacity="1" data-animation="" data-delay="0">
+															<div class="column-bg-overlay"></div>
+															<div class="vc_column-inner">
+																<div class="wpb_wrapper">
+
+																</div>
+															</div>
+														</div>
+
+														<div style=""
+															class="vc_col-sm-3 employe-detail-box employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
+															data-using-bg="true" data-t-w-inherits="default"
+															data-shadow="none" data-border-radius="none"
+															data-border-animation="" data-border-animation-delay=""
+															data-border-width="none" data-border-style="solid"
+															data-border-color="" data-bg-cover="" data-padding-pos="all"
+															data-has-bg-color="true" data-bg-color="#292929"
+															data-bg-opacity="1" data-hover-bg=""
+															data-hover-bg-opacity="1" data-animation="" data-delay="0">
+															<div class="column-bg-overlay"
+																style="opacity: 1; background-color: #292929;"></div>
+															<div class="vc_column-inner">
+																<div class="wpb_wrapper">
+
+																	<div class="wpb_text_column wpb_content_element ">
+																		<div class="wpb_wrapper">
+																			<h4 style="text-align: center;">Babu
+																				Muhammad
+																				Rafique (Late)</h4>
+																			<p style="text-align: center;">Over 40 Years
+																				of
+																				Expertise in Sportswear Manufacturing
+																			</p>
+
+																		</div>
+																	</div>
+
+																</div>
+															</div>
+														</div>
+
+														<div class="vc_col-sm-3 employe-detail-img employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
+															data-t-w-inherits="default" data-shadow="none"
+															data-border-radius="none" data-border-animation=""
+															data-border-animation-delay="" data-border-width="none"
+															data-border-style="solid" data-border-color=""
+															data-bg-cover="" data-padding-pos="all"
+															data-has-bg-color="false" data-bg-color=""
+															data-bg-opacity="1" data-hover-bg=""
+															data-hover-bg-opacity="1" data-animation="" data-delay="0">
+															<div class="column-bg-overlay"></div>
+															<div class="vc_column-inner">
+																<div class="wpb_wrapper">
+																	<div class="img-with-aniamtion-wrap "
+																		data-max-width="100%" data-border-radius="none">
+																		<div class="inner"><img data-shadow="none"
+																				data-shadow-direction="middle"
+																				class="img-with-animation skip-lazy "
+																				data-delay="0" height="325" width="325"
+																				data-animation="fade-in"
+																				src="images/Untitled-1.png"
+																				srcset="images/Untitled-1.png 325w, images/Untitled-1-150x150.png 150w, images/Untitled-1-300x300.png 300w, images/Untitled-1-100x100.png 100w, images/Untitled-1-140x140.png 140w"
+																				sizes="100vw" alt=""></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div id="fws_685c2352896a5" data-midnight="" data-column-margin="none"
+													data-bg-mobile-hidden=""
+													class="wpb_row vc_row-fluid vc_row inner_row standard_section    "
+													style="padding-top: 0px; padding-bottom: 0px; ">
+													<div class="row-bg-wrap">
+														<div class="row-bg   " style=""></div>
+													</div>
+													<div class="col span_12  left">
+														<div style=""
+															class="vc_col-sm-3 employe-detail-box employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
+															data-using-bg="true" data-t-w-inherits="default"
+															data-shadow="none" data-border-radius="none"
+															data-border-animation="" data-border-animation-delay=""
+															data-border-width="none" data-border-style="solid"
+															data-border-color="" data-bg-cover="" data-padding-pos="all"
+															data-has-bg-color="true" data-bg-color="#292929"
+															data-bg-opacity="1" data-hover-bg=""
+															data-hover-bg-opacity="1" data-animation="" data-delay="0">
+															<div class="column-bg-overlay"
+																style="opacity: 1; background-color: #292929;"></div>
+															<div class="vc_column-inner">
+																<div class="wpb_wrapper">
+
+																</div>
+															</div>
+														</div>
+
+														<div class="vc_col-sm-3 employe-detail-img employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
+															data-t-w-inherits="default" data-shadow="none"
+															data-border-radius="none" data-border-animation=""
+															data-border-animation-delay="" data-border-width="none"
+															data-border-style="solid" data-border-color=""
+															data-bg-cover="" data-padding-pos="all"
+															data-has-bg-color="false" data-bg-color=""
+															data-bg-opacity="1" data-hover-bg=""
+															data-hover-bg-opacity="1" data-animation="" data-delay="0">
+															<div class="column-bg-overlay"></div>
+															<div class="vc_column-inner">
+																<div class="wpb_wrapper">
+
+																</div>
+															</div>
+														</div>
+
+														<div style=""
+															class="vc_col-sm-3 employe-detail-box employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
+															data-using-bg="true" data-t-w-inherits="default"
+															data-shadow="none" data-border-radius="none"
+															data-border-animation="" data-border-animation-delay=""
+															data-border-width="none" data-border-style="solid"
+															data-border-color="" data-bg-cover="" data-padding-pos="all"
+															data-has-bg-color="true" data-bg-color="#292929"
+															data-bg-opacity="1" data-hover-bg=""
+															data-hover-bg-opacity="1" data-animation="" data-delay="0">
+															<div class="column-bg-overlay"
+																style="opacity: 1; background-color: #292929;"></div>
+															<div class="vc_column-inner">
+																<div class="wpb_wrapper">
+
+
+
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div id="fws_685c235289ab3" data-midnight="" data-column-margin="none"
+													data-bg-mobile-hidden=""
+													class="wpb_row vc_row-fluid vc_row inner_row standard_section    "
+													style="padding-top: 0px; padding-bottom: 0px; ">
+													<div class="row-bg-wrap">
+														<div class="row-bg   " style=""></div>
+													</div>
+													<div class="col span_12  left">
+														<div style=""
+															class="vc_col-sm-3 employe-detail-box employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
+															data-using-bg="true" data-t-w-inherits="default"
+															data-shadow="none" data-border-radius="none"
+															data-border-animation="" data-border-animation-delay=""
+															data-border-width="none" data-border-style="solid"
+															data-border-color="" data-bg-cover="" data-padding-pos="all"
+															data-has-bg-color="true" data-bg-color="#292929"
+															data-bg-opacity="1" data-hover-bg=""
+															data-hover-bg-opacity="1" data-animation="" data-delay="0">
+															<div class="column-bg-overlay"
+																style="opacity: 1; background-color: #292929;"></div>
+															<div class="vc_column-inner">
+																<div class="wpb_wrapper">
+
+																	<div class="wpb_text_column wpb_content_element ">
+																		<div class="wpb_wrapper">
+																			<h4 style="text-align: center;">Saba riaz
+																			</h4>
+																			<p style="text-align: center;">Purchasing
+																				manager at Classic Play Sports</p>
+
+																		</div>
+																	</div>
+
+																</div>
+															</div>
+														</div>
+
+														<div class="vc_col-sm-3 employe-detail-img employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
+															data-t-w-inherits="default" data-shadow="none"
+															data-border-radius="none" data-border-animation=""
+															data-border-animation-delay="" data-border-width="none"
+															data-border-style="solid" data-border-color=""
+															data-bg-cover="" data-padding-pos="all"
+															data-has-bg-color="false" data-bg-color=""
+															data-bg-opacity="1" data-hover-bg=""
+															data-hover-bg-opacity="1" data-animation="" data-delay="0">
+															<div class="column-bg-overlay"></div>
+															<div class="vc_column-inner">
+																<div class="wpb_wrapper">
+
+																</div>
+															</div>
+														</div>
+
+														<div style=""
+															class="vc_col-sm-3 employe-detail-box employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
+															data-using-bg="true" data-t-w-inherits="default"
+															data-shadow="none" data-border-radius="none"
+															data-border-animation="" data-border-animation-delay=""
+															data-border-width="none" data-border-style="solid"
+															data-border-color="" data-bg-cover="" data-padding-pos="all"
+															data-has-bg-color="true" data-bg-color="#292929"
+															data-bg-opacity="1" data-hover-bg=""
+															data-hover-bg-opacity="1" data-animation="" data-delay="0">
+															<div class="column-bg-overlay"
+																style="opacity: 1; background-color: #292929;"></div>
+															<div class="vc_column-inner">
+																<div class="wpb_wrapper">
+
+																	<div class="wpb_text_column wpb_content_element ">
+																		<div class="wpb_wrapper">
+																			<h4 style="text-align: center;">Atif
+																				chudhary
+																			</h4>
+																			<p style="text-align: center;">Finance
+																				Manager
+																				at Classic Play Sports</p>
+
+																		</div>
+																	</div>
+
+																</div>
+															</div>
+														</div>
+
+														<div
+															class="col span_12 section-title text-align-center extra-padding">
+															<h2
+																style="margin-top: 40px; margin-left: 20px; margin-bottom: 30px; text-align: left;">
+																<span style="color: #799b0a;">Certificats</span>
+															</h2>
 														</div>
 														<div class="clear"></div>
 													</div>
@@ -478,48 +1287,28 @@ document.addEventListener("DOMContentLoaded", function () {
 											</div>
 										</div>
 									</div>
-									<div id="fws_685c235285c00" data-midnight="" data-column-margin="default"
+									<div id="fws_685c2352921a1" data-midnight="" data-column-margin="default"
 										data-bg-mobile-hidden=""
-										class="wpb_row vc_row-fluid vc_row inner_row standard_section   menufacture-details "
+										class="wpb_row vc_row-fluid vc_row inner_row standard_section    "
 										style="padding-top: 0px; padding-bottom: 0px; ">
 										<div class="row-bg-wrap">
 											<div class="row-bg   " style=""></div>
 										</div>
 										<div class="col span_12  left">
-											<div style=""
-												class="vc_col-sm-6 wpb_column column_container vc_column_container col no-extra-padding"
-												data-using-bg="true" data-t-w-inherits="default" data-shadow="none"
-												data-border-radius="none" data-border-animation=""
-												data-border-animation-delay="" data-border-width="none"
-												data-border-style="solid" data-border-color="" data-bg-cover=""
-												data-padding-pos="all" data-has-bg-color="false" data-bg-color=""
-												data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
-												data-animation="" data-delay="0">
-												<div class="column-image-bg-wrap" data-bg-animation="none">
-													<div class="inner-wrap">
-														<div class="column-image-bg"
-															style=" background-image: url('images/Surgical-Instruments_large.jpg'); ">
-														</div>
-													</div>
-												</div>
+											<div class="vc_col-sm-4 wpb_column column_container vc_column_container col no-extra-padding"
+												data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
+												data-border-animation="" data-border-animation-delay=""
+												data-border-width="none" data-border-style="solid" data-border-color=""
+												data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
+												data-bg-color="" data-bg-opacity="1" data-hover-bg=""
+												data-hover-bg-opacity="1" data-animation="" data-delay="0">
 												<div class="column-bg-overlay"></div>
 												<div class="vc_column-inner">
-													<div class="wpb_wrapper">
-														<div class="img-with-aniamtion-wrap center"
-															data-max-width="100%" data-border-radius="none">
-															<div class="inner"><img data-shadow="none"
-																	data-shadow-direction="middle"
-																	class="img-with-animation skip-lazy " data-delay="0"
-																	height="605" width="500" data-animation="fade-in"
-																	src="images/banner.png"
-																	srcset="images/banner.png 500w, images/201671813311938689-248x300.jpg 248w, images/201671813311938689-188x228.jpg 188w"
-																	sizes="100vw" alt=""></div>
-														</div>
-													</div>
+
 												</div>
 											</div>
 
-											<div class="vc_col-sm-6 wpb_column column_container vc_column_container col no-extra-padding"
+											<div class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding"
 												data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
 												data-border-animation="" data-border-animation-delay=""
 												data-border-width="none" data-border-style="solid" data-border-color=""
@@ -529,36 +1318,22 @@ document.addEventListener("DOMContentLoaded", function () {
 												<div class="column-bg-overlay"></div>
 												<div class="vc_column-inner">
 													<div class="wpb_wrapper">
-
-														<div
-															class="col span_12 section-title text-align-center extra-padding">
-															<h2>
-															</h2>
-															<h2 style="text-align: left;">Interested to work with us?
-															</h2>
-														</div>
-														<div class="clear"></div>
-														<div
-															class="wpb_text_column wpb_content_element  menufacture-details">
-															<div class="wpb_wrapper">
-																<p>While <strong><span style="color: #799b0a;">Classic
-																			Play Sports</span></strong> is a newly
-																	introduced brand, our mission is clear — to deliver
-																	high-performance <span
-																		style="color: #799b0a;"><strong>sportswear</strong></span>
-																	that meets the real needs of athletes and teams.
-																	Backed by a passion for innovation and quality, our
-																	modern production setup allows us to create stylish,
-																	durable, and functional apparel that brings out the
-																	best in every player.</p>
-
+														<div class="img-with-aniamtion-wrap" data-max-width="100%"
+															data-border-radius="none">
+															<div class="inner">
+																<a href="images/classic_play_certificate.png"
+																	class="pp">
+																	<img data-shadow="none"
+																		data-shadow-direction="middle"
+																		class="img-with-animation skip-lazy"
+																		data-delay="0" height="1280" width="989"
+																		data-animation="fade-in"
+																		src="images/classic_play_certificate.png"
+																		srcset="images/classic_play_certificate.png 989w, images/classic_play_certificate.png 232w, images/classic_play_certificate.png 768w, images/classic_play_certificate.png 791w, images/classic_play_certificate.png 600w"
+																		sizes="100vw" alt="">
+																</a>
 															</div>
 														</div>
-														<a class="nectar-button large regular accent-color  regular-button more-detail-btn"
-															style="" href="#" data-color-override="false"
-															data-hover-color-override="false"
-															data-hover-text-color-override="#fff"><span>Contact
-																us</span></a>
 													</div>
 												</div>
 											</div>
@@ -569,10 +1344,9 @@ document.addEventListener("DOMContentLoaded", function () {
 						</div>
 					</div>
 				</div>
-				<div id="fws_685c2352862ce" data-midnight="dark" data-top-percent="13%" data-bottom-percent="7%"
-					data-bg-mobile-hidden=""
-					class="wpb_row vc_row-fluid vc_row full-width-section standard_section  catalogs-block "
-					style="padding-top: calc(100vw * 0.13); padding-bottom: calc(100vw * 0.07); ">
+				<div id="fws_685c235292f30" data-midnight="dark" data-bg-mobile-hidden=""
+					class="wpb_row vc_row-fluid vc_row full-width-section standard_section   "
+					style="padding-top: 0px; padding-bottom: 0px; ">
 					<div class="row-bg-wrap" data-bg-animation="none">
 						<div class="inner-wrap ">
 							<div class="row-bg  using-bg-color  " style="background-color: #000000; "></div>
@@ -613,7 +1387,7 @@ document.addEventListener("DOMContentLoaded", function () {
 												</div>
 											</div>
 
-											<div class="vc_col-sm-8 block-heading wpb_column column_container vc_column_container col centered-text no-extra-padding"
+											<div class="vc_col-sm-8 block-heading wpb_column column_container vc_column_container col centered-text padding-3-percent"
 												data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
 												data-border-animation="" data-border-animation-delay=""
 												data-border-width="none" data-border-style="solid" data-border-color=""
@@ -625,20 +1399,154 @@ document.addEventListener("DOMContentLoaded", function () {
 													<div class="wpb_wrapper">
 
 														<div
-															class="col span_12 section-title text-align-center extra-padding">
-															<h2>
-																<p style="text-align: center; color: #799b0a;">Our
-																	Sportswear Collections</p>
+															class="col span_12 section-title text-align-center extra-padding gallery">
+															<h2><strong><span style="color: #ff0000;">MEET US AT
+																	</span></strong>
+																<p></p>
+																<p><strong>Guhadpur Sialkot Pakistan</strong></p>
 															</h2>
+														</div>
+														<div class="clear"></div>
+													</div>
+												</div>
+											</div>
+
+											<div class="vc_col-sm-2 wpb_column column_container vc_column_container col no-extra-padding"
+												data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
+												data-border-animation="" data-border-animation-delay=""
+												data-border-width="none" data-border-style="solid" data-border-color=""
+												data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
+												data-bg-color="" data-bg-opacity="1" data-hover-bg=""
+												data-hover-bg-opacity="1" data-animation="" data-delay="0">
+												<div class="column-bg-overlay"></div>
+												<div class="vc_column-inner">
+													<div class="wpb_wrapper">
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row blog-recent columns-2" data-style="default"
+										data-color-scheme="light" data-remove-post-date="1" data-remove-post-author="1"
+										data-remove-post-comment-number="" data-remove-post-nectar-love="">
+
+
+										<div
+											class="col span_6 post-1778 post type-post status-publish format-standard has-post-thumbnail category-uncategorized">
+
+											<a href="#"><img width="600" height="403" src="images/base_banner.png"
+													class="attachment-portfolio-thumb size-portfolio-thumb wp-post-image"
+													alt="" loading="lazy" title=""
+													sizes="(max-width: 600px) 100vw, 600px"></a>
+											<div class="post-header">
+												<h3 class="title"><a href="#">Spratt
+														(brun) Bone Curettes</a></h3>
+												<span class="meta-author"><a href="#" title="Posts by admin"
+														rel="author">admin</a> </span> <span class="meta-category"> | <a
+														href="#">Uncategorized</a>
+												</span> <span class="meta-comment-count"> | <a href="#">
+														No Comments</a> </span>
+											</div><!--/post-header-->
+
+											<div class="excerpt">Spratt (brun) Bone Curettes Straight, Oval Cup, Hollow
+												Handle size: 6 1/2 7</div>
+										</div><!--/col-->
+
+
+										<div
+											class="col span_6 post-1 post type-post status-publish format-standard category-uncategorized">
+
+
+											<div class="post-header">
+												<h3 class="title"><a href="#">Hello
+														world!</a></h3>
+												<span class="meta-author"><a href="#" title="Posts by admin"
+														rel="author">admin</a> </span> <span class="meta-category"> | <a
+														href="#">Uncategorized</a>
+												</span> <span class="meta-comment-count"> | <a href="#">
+														One Comment</a> </span>
+											</div><!--/post-header-->
+
+											<div class="excerpt">Welcome to WordPress. This is your first post. Edit or
+												delete it, then start writing!</div>
+										</div><!--/col-->
+
+
+									</div><!--/blog-recent-->
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-midnight="light" data-bg-mobile-hidden=""
+					class="wpb_row vc_row-fluid vc_row full-width-section standard_section   "
+					style="padding-top: 0px; padding-bottom: 30px; ">
+					<div class="row-bg-wrap" data-bg-animation="none">
+						<div class="inner-wrap ">
+							<div class="row-bg  using-bg-color  " style="background-color: #000000; "></div>
+						</div>
+						<div class="row-bg-overlay"></div>
+					</div>
+					<div class="col span_12 light center">
+						<div class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding"
+							data-t-w-inherits="default" data-border-radius="none" data-shadow="none"
+							data-border-animation="" data-border-animation-delay="" data-border-width="none"
+							data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all"
+							data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg=""
+							data-hover-bg-opacity="1" data-animation="" data-delay="0">
+							<div class="column-bg-overlay"></div>
+							<div class="vc_column-inner">
+								<div class="wpb_wrapper">
+
+									<div id="contact" data-midnight="" data-column-margin="default"
+										data-bg-mobile-hidden=""
+										class="wpb_row vc_row-fluid vc_row inner_row standard_section   catlog-heading "
+										style="padding-top: 3%; padding-bottom: 5%; ">
+										<div class="row-bg-wrap">
+											<div class="row-bg   " style=""></div>
+										</div>
+										<div class="col span_12  left">
+											<div class="vc_col-sm-2 wpb_column column_container vc_column_container col no-extra-padding"
+												data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
+												data-border-animation="" data-border-animation-delay=""
+												data-border-width="none" data-border-style="solid" data-border-color=""
+												data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
+												data-bg-color="" data-bg-opacity="1" data-hover-bg=""
+												data-hover-bg-opacity="1" data-animation="" data-delay="0">
+												<div class="column-bg-overlay"></div>
+												<div class="vc_column-inner">
+													<div class="wpb_wrapper">
+
+													</div>
+												</div>
+											</div>
+
+											<div class="vc_col-sm-8 block-heading wpb_column column_container vc_column_container col centered-text padding-3-percent"
+												data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
+												data-border-animation="" data-border-animation-delay=""
+												data-border-width="none" data-border-style="solid" data-border-color=""
+												data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
+												data-bg-color="" data-bg-opacity="1" data-hover-bg=""
+												data-hover-bg-opacity="1" data-animation="" data-delay="0">
+												<div class="column-bg-overlay"></div>
+												<div class="vc_column-inner">
+													<div class="wpb_wrapper contact">
+
+														<div
+															class="col span_12 section-title text-align-center extra-padding ">
+															<h2>GET IN <span style="color: #799b0a;">TOUCH</span></h2>
 														</div>
 														<div class="clear"></div>
 														<div class="wpb_text_column wpb_content_element ">
 															<div class="wpb_wrapper">
-																<h5 style="text-align: center; color: #ffffff;">Browse
-																	our catalogs below to explore our full sportswear
-																	lineup.
-																	Have questions before ordering? Reach out — our team
-																	is ready to support you with expert guidance.</h5>
+																<h5 style="text-align: center; color: #ffffff;">Feel
+																	free to
+																	ask any questions you have! We would glad to respond
+																	to
+																	your query asap.</h5>
 
 															</div>
 														</div>
@@ -663,15 +1571,15 @@ document.addEventListener("DOMContentLoaded", function () {
 											</div>
 										</div>
 									</div>
-									<div id="fws_685c235286900" data-midnight="" data-column-margin="default"
+									<div id="fws_685c2352957a4" data-midnight="" data-column-margin="default"
 										data-bg-mobile-hidden=""
-										class="wpb_row vc_row-fluid vc_row inner_row standard_section   catlog-products "
+										class="wpb_row vc_row-fluid vc_row inner_row standard_section    "
 										style="padding-top: 0px; padding-bottom: 0px; ">
 										<div class="row-bg-wrap">
 											<div class="row-bg   " style=""></div>
 										</div>
 										<div class="col span_12  left">
-											<div class="vc_col-sm-4 catlog-box wpb_column column_container vc_column_container col no-extra-padding"
+											<div class="vc_col-sm-3 foter-detail wpb_column column_container vc_column_container col no-extra-padding"
 												data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
 												data-border-animation="" data-border-animation-delay=""
 												data-border-width="none" data-border-style="solid" data-border-color=""
@@ -681,43 +1589,66 @@ document.addEventListener("DOMContentLoaded", function () {
 												<div class="column-bg-overlay"></div>
 												<div class="vc_column-inner">
 													<div class="wpb_wrapper">
-														<div class="img-with-aniamtion-wrap center"
-															data-max-width="100%" data-border-radius="none">
-															<div class="inner"><img data-shadow="none"
-																	data-shadow-direction="middle"
-																	class="img-with-animation skip-lazy " data-delay="0"
-																	height="250" width="258" data-animation="fade-in"
-																	src="images/football_t.png"
-																	srcset="images/football_t.png 258w, images/eyecare-image-235x228.png 235w"
-																	sizes="100vw" alt=""></div>
-														</div>
+
 														<div class="wpb_text_column wpb_content_element ">
 															<div class="wpb_wrapper">
-																<p style="text-align: center; color: #fff;">Football Kit
+																<h3 style="text-align: left;">visit our office</h3>
+																<ul style="text-align: left;">
+																	<li>
+																		<h2>Classic Play Sports</h2>
+																	</li>
+																	<li><span style="color: #799b0a;">Address:
+																		</span> Guhadpur Sialkot Pakistan</li>
+																	<li><span style="color: #799b0a;"><span
+																				style="color: #799b0a;">Phone:       
+																			</span></span>+923235224881</li>
+																	<li><span style="color: #799b0a;">NTN: </span>     
+																		   
+																		  G904531-4</li>
+																	<li><span style="color: #799b0a;"><span
+																				style="color: #799b0a;">whatsapp:</span>
+																		</span> +92300-6168646</li>
+																	<li><span style="color: #799b0a;"><span
+																				style="color: #799b0a;">Email:</span>   
+																			 
+																			 </span> classicplaysports786@gmail.com</li>
+																</ul>
+																<h3 style="text-align: left;">Get Connected</h3>
+																<p style="text-align: left;">Follow us on social
+																	networks!
 																</p>
 
 															</div>
 														</div>
-														<a class="nectar-button large regular accent-color  regular-button more-detail-btn"
-															style="margin-right: 20px; margin-left: 50px;"
-															target="_blank"
-															href="classicplaysports.com/hdf-medical-eyecare-2/"
-															data-color-override="false"
-															data-hover-color-override="false"
-															data-hover-text-color-override="#fff"><span>Live
-																Preview</span></a><a
-															class="nectar-button large regular accent-color  regular-button more-detail-btn1"
-															style="margin-right: 40px; margin-left: 40px;"
-															target="_blank"
-															href="classicplaysports.com/wp-content/uploads/2019/05/HDF-MEDICAL-EYECARE.pdf"
-															data-color-override="false"
-															data-hover-color-override="false"
-															data-hover-text-color-override="#fff"><span>Download</span></a>
+
+														<div class="wpb_text_column wpb_content_element ">
+															<div class="wpb_wrapper">
+																<div class="nectar-social full-width items_3"><a
+																		class="facebook" title="Facebook" href="#"
+																		target="_blank" rel="noopener noreferrer"> <i
+																			class="fa fa-facebook">Facebook</i> </a> <a
+																		class="instagram" title="Instagram" href="#"
+																		target="_blank" rel="noopener noreferrer"> <i
+																			class="fa fa-instagram">Instagram</i> </a>
+																	<a class="linkedin" title="Linkedin" href="#"
+																		target="_blank" rel="noopener noreferrer"> <i
+																			class="fa fa-linkedin">LinkedIn</i> </a><a
+																		class="tiktok" title="Tiktok" href="#"
+																		target="_blank" rel="noopener noreferrer"> <i
+																			class="fa fa-music">"Tiktok"</i> </a><a
+																		class="youtube" title="Youtube" href="#"
+																		target="_blank" rel="noopener noreferrer"> <i
+																			class="fa fa-youtube">"Youtube"</i> </a>
+																</div>
+
+															</div>
+														</div>
+
 													</div>
 												</div>
 											</div>
 
-											<div class="vc_col-sm-4 catlog-box wpb_column column_container vc_column_container col no-extra-padding"
+											<div class="vc_col-sm-9 foter-contect wpb_column column_container vc_column_container col no-extra-padding"
 												data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
 												data-border-animation="" data-border-animation-delay=""
 												data-border-width="none" data-border-style="solid" data-border-color=""
@@ -727,540 +1658,56 @@ document.addEventListener("DOMContentLoaded", function () {
 												<div class="column-bg-overlay"></div>
 												<div class="vc_column-inner">
 													<div class="wpb_wrapper">
-														<div class="img-with-aniamtion-wrap center"
-															data-max-width="100%" data-border-radius="none">
-															<div class="inner"><img data-shadow="none"
-																	data-shadow-direction="middle"
-																	class="img-with-animation skip-lazy " data-delay="0"
-																	height="250" width="258" data-animation="fade-in"
-																	src="images/cricket.png"
-																	srcset="images/cricket.png 258w, images/medical-image-235x228.png 235w"
-																	sizes="100vw" alt=""></div>
-														</div>
-														<div class="wpb_text_column wpb_content_element ">
-															<div class="wpb_wrapper">
-																<p style="text-align: center; color: #fff;">Cricket Kit
-																</p>
+														<div role="form" class="wpcf7" id="wpcf7-f6-p910-o2"
+															lang="en-US" dir="ltr">
+															<div class="screen-reader-response"></div>
+															<form action="" method="post" class="wpcf7-form"
+																novalidate="novalidate">
 
-															</div>
-														</div>
-														<a class="nectar-button large regular accent-color  regular-button more-detail-btn"
-															style="margin-right: 20px; margin-left: 50px;"
-															target="_blank"
-															href="classicplaysports.com/hdf-medical-dental-instruments"
-															data-color-override="false"
-															data-hover-color-override="false"
-															data-hover-text-color-override="#fff"><span>Live
-																Preview</span></a><a
-															class="nectar-button large regular accent-color  regular-button more-detail-btn1"
-															style="margin-left: 30px;" target="_blank"
-															href="classicplaysports.com/wp-content/uploads/2019/05/dental-cat.pdf"
-															data-color-override="false"
-															data-hover-color-override="false"
-															data-hover-text-color-override="#fff"><span>Download</span></a>
-													</div>
-												</div>
-											</div>
-
-											<div class="vc_col-sm-4 catlog-box wpb_column column_container vc_column_container col no-extra-padding"
-												data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
-												data-border-animation="" data-border-animation-delay=""
-												data-border-width="none" data-border-style="solid" data-border-color=""
-												data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
-												data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-												data-hover-bg-opacity="1" data-animation="" data-delay="0">
-												<div class="column-bg-overlay"></div>
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper">
-														<div class="img-with-aniamtion-wrap center"
-															data-max-width="100%" data-border-radius="none">
-															<div class="inner"><img data-shadow="none"
-																	data-shadow-direction="middle"
-																	class="img-with-animation skip-lazy " data-delay="0"
-																	height="250" width="258" data-animation="fade-in"
-																	src="images/gloves.png"
-																	srcset="images/gloves.png 258w, images/surgical-image-235x228.png 235w"
-																	sizes="100vw" alt=""></div>
-														</div>
-														<div class="wpb_text_column wpb_content_element ">
-															<div class="wpb_wrapper">
-																<p style="text-align: center; color: #fff;">Cricket
-																	gloves</p>
-
-															</div>
-														</div>
-														<a class="nectar-button large regular accent-color  regular-button more-detail-btn"
-															style="margin-right: 2px; margin-left: 50px;"
-															target="_blank"
-															href="classicplaysports.com/surgical-instruments/"
-															data-color-override="false"
-															data-hover-color-override="false"
-															data-hover-text-color-override="#fff"><span>Live
-																Preview</span></a><a
-															class="nectar-button large regular accent-color  regular-button more-detail-btn1"
-															style="margin-left: 30px;" target="_blank"
-															href="classicplaysports.com/wp-content/uploads/2019/05/1-merged.pdf"
-															data-color-override="false"
-															data-hover-color-override="false"
-															data-hover-text-color-override="#fff"><span>Download</span></a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div id="fws_685c2352875d7" data-midnight="" data-column-margin="default"
-										data-bg-mobile-hidden=""
-										class="wpb_row vc_row-fluid vc_row inner_row standard_section   catlog-products "
-										style="padding-top: 0px; padding-bottom: 0px; ">
-										<div class="row-bg-wrap">
-											<div class="row-bg   " style=""></div>
-										</div>
-										<div class="col span_12  left">
-											<div class="vc_col-sm-4 catlog-box wpb_column column_container vc_column_container col no-extra-padding"
-												data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
-												data-border-animation="" data-border-animation-delay=""
-												data-border-width="none" data-border-style="solid" data-border-color=""
-												data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
-												data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-												data-hover-bg-opacity="1" data-animation="" data-delay="0">
-												<div class="column-bg-overlay"></div>
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper">
-														<div class="img-with-aniamtion-wrap center"
-															data-max-width="100%" data-border-radius="none">
-															<div class="inner"><img data-shadow="none"
-																	data-shadow-direction="middle"
-																	class="img-with-animation skip-lazy " data-delay="0"
-																	height="250" width="258" data-animation="fade-in"
-																	src="images/cap.png"
-																	srcset="images/cap.png 258w, images/spinal-235x228.png 235w"
-																	sizes="100vw" alt=""></div>
-														</div>
-														<div class="wpb_text_column wpb_content_element ">
-															<div class="wpb_wrapper">
-																<p style="text-align: center; color: #fff;">sports cap
-																</p>
-
-															</div>
-														</div>
-														<a class="nectar-button large regular accent-color  regular-button more-detail-btn"
-															style="margin-right: 20px; margin-left: 50px;"
-															target="_blank"
-															href="classicplaysports.com/spine-instruments/"
-															data-color-override="false"
-															data-hover-color-override="false"
-															data-hover-text-color-override="#fff"><span>Live
-																Preview</span></a><a
-															class="nectar-button large regular accent-color  regular-button more-detail-btn1"
-															style="margin-right: 40px; margin-left: 40px;"
-															target="_blank"
-															href="classicplaysports.com/wp-content/uploads/2021/06/01-converted.pdf"
-															data-color-override="false"
-															data-hover-color-override="false"
-															data-hover-text-color-override="#fff"><span>Download</span></a>
-													</div>
-												</div>
-											</div>
-
-											<div class="vc_col-sm-4 catlog-box wpb_column column_container vc_column_container col no-extra-padding"
-												data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
-												data-border-animation="" data-border-animation-delay=""
-												data-border-width="none" data-border-style="solid" data-border-color=""
-												data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
-												data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-												data-hover-bg-opacity="1" data-animation="" data-delay="0">
-												<div class="column-bg-overlay"></div>
-												<div class="vc_column-inner">
-													<div class="wpb_wrapper">
-														<div class="img-with-aniamtion-wrap center"
-															data-max-width="100%" data-border-radius="none">
-															<div class="inner"><img data-shadow="none"
-																	data-shadow-direction="middle"
-																	class="img-with-animation skip-lazy " data-delay="0"
-																	height="250" width="258" data-animation="fade-in"
-																	src="images/Hoodies.png"
-																	srcset="images/Hoodies.png 258w, images/electro-235x228.png 235w"
-																	sizes="100vw" alt=""></div>
-														</div>
-														<div class="wpb_text_column wpb_content_element ">
-															<div class="wpb_wrapper">
-																<p style="text-align: center; color: #fff;">Hoodies</p>
-
-															</div>
-														</div>
-														<a class="nectar-button large regular accent-color  regular-button more-detail-btn"
-															style="margin-right: 20px; margin-left: 50px;"
-															target="_blank"
-															href="classicplaysports.com/spine-instruments/"
-															data-color-override="false"
-															data-hover-color-override="false"
-															data-hover-text-color-override="#fff"><span>Live
-																Preview</span></a><a
-															class="nectar-button large regular accent-color  regular-button more-detail-btn1"
-															style="margin-right: 40px; margin-left: 40px;"
-															target="_blank"
-															href="classicplaysports.com/wp-content/uploads/2021/06/01-converted.pdf"
-															data-color-override="false"
-															data-hover-color-override="false"
-															data-hover-text-color-override="#fff"><span>Download</span></a>
-
-
-														<div class="vc_column-inner">
-															<div class="wpb_wrapper">
-																<div class="text-align-center">
-																	<h2
-																		style="color: #799b0a; font-size: 40px; font-weight: bold;">
-																		MEET OUR STAFF</h2>
+																<div class="form-field ">
+																	<span class="wpcf7-form-control-wrap your-name">
+																		<input type="text" name="your-name" value=""
+																			size="40"
+																			class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required input-field"
+																			aria-required="true" aria-invalid="false"
+																			placeholder="Name *" required></span>
 																</div>
-															</div>
-														</div>
-													</div>
-
-													<div class="vc_col-sm-2 wpb_column column_container vc_column_container col no-extra-padding"
-														data-t-w-inherits="default" data-shadow="none"
-														data-border-radius="none" data-border-animation=""
-														data-border-animation-delay="" data-border-width="none"
-														data-border-style="solid" data-border-color="" data-bg-cover=""
-														data-padding-pos="all" data-has-bg-color="false"
-														data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-														data-hover-bg-opacity="1" data-animation="" data-delay="0">
-														<div class="column-bg-overlay"></div>
-														<div class="vc_column-inner">
-															<div class="wpb_wrapper">
-
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div id="fws_685c235288f9e" data-midnight="" data-column-margin="default"
-												data-bg-mobile-hidden=""
-												class="wpb_row vc_row-fluid vc_row inner_row standard_section  vc_custom_1553865090338   "
-												style="padding-top: 0px; padding-bottom: 0px; ">
-												<div class="row-bg-wrap">
-													<div class="row-bg   " style=""></div>
-												</div>
-												<div class="col span_12  center">
-													<div style=""
-														class="vc_col-sm-3 employe-detail-box employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
-														data-using-bg="true" data-t-w-inherits="default"
-														data-shadow="none" data-border-radius="none"
-														data-border-animation="" data-border-animation-delay=""
-														data-border-width="none" data-border-style="solid"
-														data-border-color="" data-bg-cover="" data-padding-pos="all"
-														data-has-bg-color="true" data-bg-color="#292929"
-														data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
-														data-animation="" data-delay="0">
-														<div class="column-bg-overlay"
-															style="opacity: 1; background-color: #292929;"></div>
-														<div class="vc_column-inner">
-															<div class="wpb_wrapper">
-
-																<div class="wpb_text_column wpb_content_element ">
-																	<div class="wpb_wrapper">
-																		<h4 style="text-align: center;">Safina Atif</h4>
-																		<p style="text-align: center;">chief executive
-																			officer CEO at Classic Play Sports</p>
-
+																<div class="form-field ">
+																	<span class="wpcf7-form-control-wrap email"><input
+																			type="email" name="email" value="" size="40"
+																			class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email input-field"
+																			aria-required="true" aria-invalid="false"
+																			placeholder="E-mail *" required></span>
+																</div>
+																<div class="form-field ">
+																	<span class="wpcf7-form-control-wrap tel"><input
+																			type="tel" name="tel" value="" size="40"
+																			class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel input-field"
+																			aria-invalid="false"
+																			placeholder="Telephone*" required></span>
+																</div>
+																<div class="form-text-area">
+																	<span
+																		class="wpcf7-form-control-wrap textarea"><textarea
+																			name="textarea" cols="40" rows="10"
+																			class="wpcf7-form-control wpcf7-textarea input-textarea"
+																			aria-invalid="false" placeholder="Message*"
+																			required></textarea></span>
+																</div>
+																<div class="form-butn">
+																	<div id="form-message"
+																		style="margin-top: 10px; font-weight: bold;">
 																	</div>
+																	<input type="submit" value="SEND IT" class="">
 																</div>
 
-															</div>
-														</div>
-													</div>
-
-													<div class="vc_col-sm-3 employe-detail-img employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
-														data-t-w-inherits="default" data-shadow="none"
-														data-border-radius="none" data-border-animation=""
-														data-border-animation-delay="" data-border-width="none"
-														data-border-style="solid" data-border-color="" data-bg-cover=""
-														data-padding-pos="all" data-has-bg-color="false"
-														data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-														data-hover-bg-opacity="1" data-animation="" data-delay="0">
-														<div class="column-bg-overlay"></div>
-														<div class="vc_column-inner">
-															<div class="wpb_wrapper">
-
-															</div>
-														</div>
-													</div>
-
-													<div style=""
-														class="vc_col-sm-3 employe-detail-box employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
-														data-using-bg="true" data-t-w-inherits="default"
-														data-shadow="none" data-border-radius="none"
-														data-border-animation="" data-border-animation-delay=""
-														data-border-width="none" data-border-style="solid"
-														data-border-color="" data-bg-cover="" data-padding-pos="all"
-														data-has-bg-color="true" data-bg-color="#292929"
-														data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
-														data-animation="" data-delay="0">
-														<div class="column-bg-overlay"
-															style="opacity: 1; background-color: #292929;"></div>
-														<div class="vc_column-inner">
-															<div class="wpb_wrapper">
-
-																<div class="wpb_text_column wpb_content_element ">
-																	<div class="wpb_wrapper">
-																		<h4 style="text-align: center;">Babu Muhammad
-																			Rafique (Late)</h4>
-																		<p style="text-align: center;">Over 40 Years of
-																			Expertise in Sportswear Manufacturing</p>
-
-																	</div>
-																</div>
-
-															</div>
-														</div>
-													</div>
-
-													<div class="vc_col-sm-3 employe-detail-img employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
-														data-t-w-inherits="default" data-shadow="none"
-														data-border-radius="none" data-border-animation=""
-														data-border-animation-delay="" data-border-width="none"
-														data-border-style="solid" data-border-color="" data-bg-cover=""
-														data-padding-pos="all" data-has-bg-color="false"
-														data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-														data-hover-bg-opacity="1" data-animation="" data-delay="0">
-														<div class="column-bg-overlay"></div>
-														<div class="vc_column-inner">
-															<div class="wpb_wrapper">
-																<div class="img-with-aniamtion-wrap "
-																	data-max-width="100%" data-border-radius="none">
-																	<div class="inner"><img data-shadow="none"
-																			data-shadow-direction="middle"
-																			class="img-with-animation skip-lazy "
-																			data-delay="0" height="325" width="325"
-																			data-animation="fade-in"
-																			src="images/Untitled-1.png"
-																			srcset="images/Untitled-1.png 325w, images/Untitled-1-150x150.png 150w, images/Untitled-1-300x300.png 300w, images/Untitled-1-100x100.png 100w, images/Untitled-1-140x140.png 140w"
-																			sizes="100vw" alt=""></div>
-																</div>
-															</div>
+															</form>
 														</div>
 													</div>
 												</div>
 											</div>
-											<div id="fws_685c2352896a5" data-midnight="" data-column-margin="none"
-												data-bg-mobile-hidden=""
-												class="wpb_row vc_row-fluid vc_row inner_row standard_section    "
-												style="padding-top: 0px; padding-bottom: 0px; ">
-												<div class="row-bg-wrap">
-													<div class="row-bg   " style=""></div>
-												</div>
-												<div class="col span_12  left">
-													<div style=""
-														class="vc_col-sm-3 employe-detail-box employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
-														data-using-bg="true" data-t-w-inherits="default"
-														data-shadow="none" data-border-radius="none"
-														data-border-animation="" data-border-animation-delay=""
-														data-border-width="none" data-border-style="solid"
-														data-border-color="" data-bg-cover="" data-padding-pos="all"
-														data-has-bg-color="true" data-bg-color="#292929"
-														data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
-														data-animation="" data-delay="0">
-														<div class="column-bg-overlay"
-															style="opacity: 1; background-color: #292929;"></div>
-														<div class="vc_column-inner">
-															<div class="wpb_wrapper">
-
-															</div>
-														</div>
-													</div>
-
-													<div class="vc_col-sm-3 employe-detail-img employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
-														data-t-w-inherits="default" data-shadow="none"
-														data-border-radius="none" data-border-animation=""
-														data-border-animation-delay="" data-border-width="none"
-														data-border-style="solid" data-border-color="" data-bg-cover=""
-														data-padding-pos="all" data-has-bg-color="false"
-														data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-														data-hover-bg-opacity="1" data-animation="" data-delay="0">
-														<div class="column-bg-overlay"></div>
-														<div class="vc_column-inner">
-															<div class="wpb_wrapper">
-
-															</div>
-														</div>
-													</div>
-
-													<div style=""
-														class="vc_col-sm-3 employe-detail-box employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
-														data-using-bg="true" data-t-w-inherits="default"
-														data-shadow="none" data-border-radius="none"
-														data-border-animation="" data-border-animation-delay=""
-														data-border-width="none" data-border-style="solid"
-														data-border-color="" data-bg-cover="" data-padding-pos="all"
-														data-has-bg-color="true" data-bg-color="#292929"
-														data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
-														data-animation="" data-delay="0">
-														<div class="column-bg-overlay"
-															style="opacity: 1; background-color: #292929;"></div>
-														<div class="vc_column-inner">
-															<div class="wpb_wrapper">
 
 
-
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div id="fws_685c235289ab3" data-midnight="" data-column-margin="none"
-												data-bg-mobile-hidden=""
-												class="wpb_row vc_row-fluid vc_row inner_row standard_section    "
-												style="padding-top: 0px; padding-bottom: 0px; ">
-												<div class="row-bg-wrap">
-													<div class="row-bg   " style=""></div>
-												</div>
-												<div class="col span_12  left">
-													<div style=""
-														class="vc_col-sm-3 employe-detail-box employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
-														data-using-bg="true" data-t-w-inherits="default"
-														data-shadow="none" data-border-radius="none"
-														data-border-animation="" data-border-animation-delay=""
-														data-border-width="none" data-border-style="solid"
-														data-border-color="" data-bg-cover="" data-padding-pos="all"
-														data-has-bg-color="true" data-bg-color="#292929"
-														data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
-														data-animation="" data-delay="0">
-														<div class="column-bg-overlay"
-															style="opacity: 1; background-color: #292929;"></div>
-														<div class="vc_column-inner">
-															<div class="wpb_wrapper">
-
-																<div class="wpb_text_column wpb_content_element ">
-																	<div class="wpb_wrapper">
-																		<h4 style="text-align: center;">Saba riaz</h4>
-																		<p style="text-align: center;">Purchasing
-																			manager at Classic Play Sports</p>
-
-																	</div>
-																</div>
-
-															</div>
-														</div>
-													</div>
-
-													<div class="vc_col-sm-3 employe-detail-img employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
-														data-t-w-inherits="default" data-shadow="none"
-														data-border-radius="none" data-border-animation=""
-														data-border-animation-delay="" data-border-width="none"
-														data-border-style="solid" data-border-color="" data-bg-cover=""
-														data-padding-pos="all" data-has-bg-color="false"
-														data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-														data-hover-bg-opacity="1" data-animation="" data-delay="0">
-														<div class="column-bg-overlay"></div>
-														<div class="vc_column-inner">
-															<div class="wpb_wrapper">
-
-															</div>
-														</div>
-													</div>
-
-													<div style=""
-														class="vc_col-sm-3 employe-detail-box employ-box-mng wpb_column column_container vc_column_container col no-extra-padding"
-														data-using-bg="true" data-t-w-inherits="default"
-														data-shadow="none" data-border-radius="none"
-														data-border-animation="" data-border-animation-delay=""
-														data-border-width="none" data-border-style="solid"
-														data-border-color="" data-bg-cover="" data-padding-pos="all"
-														data-has-bg-color="true" data-bg-color="#292929"
-														data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1"
-														data-animation="" data-delay="0">
-														<div class="column-bg-overlay"
-															style="opacity: 1; background-color: #292929;"></div>
-														<div class="vc_column-inner">
-															<div class="wpb_wrapper">
-
-																<div class="wpb_text_column wpb_content_element ">
-																	<div class="wpb_wrapper">
-																		<h4 style="text-align: center;">Atif chudhary
-																		</h4>
-																		<p style="text-align: center;">Finance Manager
-																			at Classic Play Sports</p>
-
-																	</div>
-																</div>
-
-															</div>
-														</div>
-													</div>
-
-													<div
-														class="col span_12 section-title text-align-center extra-padding">
-														<h2
-															style="margin-top: 40px; margin-left: 20px; margin-bottom: 30px; text-align: left;">
-															<span style="color: #799b0a;">Certificats</span>
-														</h2>
-													</div>
-													<div class="clear"></div>
-												</div>
-											</div>
-										</div>
-
-										<div class="vc_col-sm-2 wpb_column column_container vc_column_container col no-extra-padding"
-											data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
-											data-border-animation="" data-border-animation-delay=""
-											data-border-width="none" data-border-style="solid" data-border-color=""
-											data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
-											data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-											data-hover-bg-opacity="1" data-animation="" data-delay="0">
-											<div class="column-bg-overlay"></div>
-											<div class="vc_column-inner">
-												<div class="wpb_wrapper">
-
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div id="fws_685c2352921a1" data-midnight="" data-column-margin="default"
-									data-bg-mobile-hidden=""
-									class="wpb_row vc_row-fluid vc_row inner_row standard_section    "
-									style="padding-top: 0px; padding-bottom: 0px; ">
-									<div class="row-bg-wrap">
-										<div class="row-bg   " style=""></div>
-									</div>
-									<div class="col span_12  left">
-										<div class="vc_col-sm-4 wpb_column column_container vc_column_container col no-extra-padding"
-											data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
-											data-border-animation="" data-border-animation-delay=""
-											data-border-width="none" data-border-style="solid" data-border-color=""
-											data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
-											data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-											data-hover-bg-opacity="1" data-animation="" data-delay="0">
-											<div class="column-bg-overlay"></div>
-											<div class="vc_column-inner">
-
-											</div>
-										</div>
-
-										<div class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding"
-											data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
-											data-border-animation="" data-border-animation-delay=""
-											data-border-width="none" data-border-style="solid" data-border-color=""
-											data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
-											data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-											data-hover-bg-opacity="1" data-animation="" data-delay="0">
-											<div class="column-bg-overlay"></div>
-											<div class="vc_column-inner">
-												<div class="wpb_wrapper">
-													<div class="img-with-aniamtion-wrap" data-max-width="100%"
-														data-border-radius="none">
-														<div class="inner">
-															<a href="images/classic_play_certificate.png" class="pp">
-																<img data-shadow="none" data-shadow-direction="middle"
-																	class="img-with-animation skip-lazy" data-delay="0"
-																	height="1280" width="989" data-animation="fade-in"
-																	src="images/classic_play_certificate.png"
-																	srcset="images/classic_play_certificate.png 989w, images/classic_play_certificate.png 232w, images/classic_play_certificate.png 768w, images/classic_play_certificate.png 791w, images/classic_play_certificate.png 600w"
-																	sizes="100vw" alt="">
-															</a>
-														</div>
-													</div>
-												</div>
-											</div>
 										</div>
 									</div>
 								</div>
@@ -1268,384 +1715,10 @@ document.addEventListener("DOMContentLoaded", function () {
 						</div>
 					</div>
 				</div>
-			</div>
-			<div id="fws_685c235292f30" data-midnight="dark" data-bg-mobile-hidden=""
-				class="wpb_row vc_row-fluid vc_row full-width-section standard_section   "
-				style="padding-top: 0px; padding-bottom: 0px; ">
-				<div class="row-bg-wrap" data-bg-animation="none">
-					<div class="inner-wrap ">
-						<div class="row-bg  using-bg-color  " style="background-color: #000000; "></div>
-					</div>
-					<div class="row-bg-overlay"></div>
-				</div>
-				<div class="col span_12 dark left">
-					<div class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding"
-						data-t-w-inherits="default" data-border-radius="none" data-shadow="none"
-						data-border-animation="" data-border-animation-delay="" data-border-width="none"
-						data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all"
-						data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-						data-hover-bg-opacity="1" data-animation="" data-delay="0">
-						<div class="column-bg-overlay"></div>
-						<div class="vc_column-inner">
-							<div class="wpb_wrapper">
 
-								<div id="menu" data-midnight="" data-column-margin="default" data-bg-mobile-hidden=""
-									class="wpb_row vc_row-fluid vc_row inner_row standard_section   catlog-heading "
-									style="padding-top: 3%; padding-bottom: 5%; ">
-									<div class="row-bg-wrap">
-										<div class="row-bg   " style=""></div>
-									</div>
-									<div class="col span_12  left">
-										<div class="vc_col-sm-2 wpb_column column_container vc_column_container col no-extra-padding"
-											data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
-											data-border-animation="" data-border-animation-delay=""
-											data-border-width="none" data-border-style="solid" data-border-color=""
-											data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
-											data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-											data-hover-bg-opacity="1" data-animation="" data-delay="0">
-											<div class="column-bg-overlay"></div>
-											<div class="vc_column-inner">
-												<div class="wpb_wrapper">
-
-												</div>
-											</div>
-										</div>
-
-										<div class="vc_col-sm-8 block-heading wpb_column column_container vc_column_container col centered-text padding-3-percent"
-											data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
-											data-border-animation="" data-border-animation-delay=""
-											data-border-width="none" data-border-style="solid" data-border-color=""
-											data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
-											data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-											data-hover-bg-opacity="1" data-animation="" data-delay="0">
-											<div class="column-bg-overlay"></div>
-											<div class="vc_column-inner">
-												<div class="wpb_wrapper">
-
-													<div
-														class="col span_12 section-title text-align-center extra-padding">
-														<h2><strong><span style="color: #ff0000;">MEET US AT
-																</span></strong>
-															<p></p>
-															<p><strong>Guhadpur Sialkot Pakistan</strong></p>
-														</h2>
-													</div>
-													<div class="clear"></div>
-												</div>
-											</div>
-										</div>
-
-										<div class="vc_col-sm-2 wpb_column column_container vc_column_container col no-extra-padding"
-											data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
-											data-border-animation="" data-border-animation-delay=""
-											data-border-width="none" data-border-style="solid" data-border-color=""
-											data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
-											data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-											data-hover-bg-opacity="1" data-animation="" data-delay="0">
-											<div class="column-bg-overlay"></div>
-											<div class="vc_column-inner">
-												<div class="wpb_wrapper">
-
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="row blog-recent columns-2" data-style="default" data-color-scheme="light"
-									data-remove-post-date="1" data-remove-post-author="1"
-									data-remove-post-comment-number="" data-remove-post-nectar-love="">
-
-
-									<div
-										class="col span_6 post-1778 post type-post status-publish format-standard has-post-thumbnail category-uncategorized">
-
-										<a href="#"><img
-												width="600" height="403" src="images/base_banner.png"
-												class="attachment-portfolio-thumb size-portfolio-thumb wp-post-image"
-												alt="" loading="lazy" title=""
-												sizes="(max-width: 600px) 100vw, 600px"></a>
-										<div class="post-header">
-											<h3 class="title"><a
-													href="#">Spratt
-													(brun) Bone Curettes</a></h3>
-											<span class="meta-author"><a href="#"
-													title="Posts by admin" rel="author">admin</a> </span> <span
-												class="meta-category"> | <a
-													href="#">Uncategorized</a>
-											</span> <span class="meta-comment-count"> | <a
-													href="#">
-													No Comments</a> </span>
-										</div><!--/post-header-->
-
-										<div class="excerpt">Spratt (brun) Bone Curettes Straight, Oval Cup, Hollow
-											Handle size: 6 1/2 7</div>
-									</div><!--/col-->
-
-
-									<div
-										class="col span_6 post-1 post type-post status-publish format-standard category-uncategorized">
-
-
-										<div class="post-header">
-											<h3 class="title"><a
-													href="#">Hello
-													world!</a></h3>
-											<span class="meta-author"><a href="#"
-													title="Posts by admin" rel="author">admin</a> </span> <span
-												class="meta-category"> | <a
-													href="#">Uncategorized</a>
-											</span> <span class="meta-comment-count"> | <a
-													href="#">
-													One Comment</a> </span>
-										</div><!--/post-header-->
-
-										<div class="excerpt">Welcome to WordPress. This is your first post. Edit or
-											delete it, then start writing!</div>
-									</div><!--/col-->
-
-
-								</div><!--/blog-recent-->
-
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div id="fws_685c235294da0" data-midnight="light" data-bg-mobile-hidden=""
-				class="wpb_row vc_row-fluid vc_row full-width-section standard_section   "
-				style="padding-top: 0px; padding-bottom: 30px; ">
-				<div class="row-bg-wrap" data-bg-animation="none">
-					<div class="inner-wrap ">
-						<div class="row-bg  using-bg-color  " style="background-color: #000000; "></div>
-					</div>
-					<div class="row-bg-overlay"></div>
-				</div>
-				<div class="col span_12 light center">
-					<div class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding"
-						data-t-w-inherits="default" data-border-radius="none" data-shadow="none"
-						data-border-animation="" data-border-animation-delay="" data-border-width="none"
-						data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all"
-						data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-						data-hover-bg-opacity="1" data-animation="" data-delay="0">
-						<div class="column-bg-overlay"></div>
-						<div class="vc_column-inner">
-							<div class="wpb_wrapper">
-
-								<div id="menu" data-midnight="" data-column-margin="default" data-bg-mobile-hidden=""
-									class="wpb_row vc_row-fluid vc_row inner_row standard_section   catlog-heading "
-									style="padding-top: 3%; padding-bottom: 5%; ">
-									<div class="row-bg-wrap">
-										<div class="row-bg   " style=""></div>
-									</div>
-									<div class="col span_12  left">
-										<div class="vc_col-sm-2 wpb_column column_container vc_column_container col no-extra-padding"
-											data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
-											data-border-animation="" data-border-animation-delay=""
-											data-border-width="none" data-border-style="solid" data-border-color=""
-											data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
-											data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-											data-hover-bg-opacity="1" data-animation="" data-delay="0">
-											<div class="column-bg-overlay"></div>
-											<div class="vc_column-inner">
-												<div class="wpb_wrapper">
-
-												</div>
-											</div>
-										</div>
-
-										<div class="vc_col-sm-8 block-heading wpb_column column_container vc_column_container col centered-text padding-3-percent"
-											data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
-											data-border-animation="" data-border-animation-delay=""
-											data-border-width="none" data-border-style="solid" data-border-color=""
-											data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
-											data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-											data-hover-bg-opacity="1" data-animation="" data-delay="0">
-											<div class="column-bg-overlay"></div>
-											<div class="vc_column-inner">
-												<div class="wpb_wrapper">
-
-													<div
-														class="col span_12 section-title text-align-center extra-padding">
-														<h2>GET IN <span style="color: #799b0a;">TOUCH</span></h2>
-													</div>
-													<div class="clear"></div>
-													<div class="wpb_text_column wpb_content_element ">
-														<div class="wpb_wrapper">
-															<h5 style="text-align: center; color: #ffffff;">Feel free to
-																ask any questions you have! We would glad to respond to
-																your query asap.</h5>
-
-														</div>
-													</div>
-
-												</div>
-											</div>
-										</div>
-
-										<div class="vc_col-sm-2 wpb_column column_container vc_column_container col no-extra-padding"
-											data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
-											data-border-animation="" data-border-animation-delay=""
-											data-border-width="none" data-border-style="solid" data-border-color=""
-											data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
-											data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-											data-hover-bg-opacity="1" data-animation="" data-delay="0">
-											<div class="column-bg-overlay"></div>
-											<div class="vc_column-inner">
-												<div class="wpb_wrapper">
-
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div id="fws_685c2352957a4" data-midnight="" data-column-margin="default"
-									data-bg-mobile-hidden=""
-									class="wpb_row vc_row-fluid vc_row inner_row standard_section    "
-									style="padding-top: 0px; padding-bottom: 0px; ">
-									<div class="row-bg-wrap">
-										<div class="row-bg   " style=""></div>
-									</div>
-									<div class="col span_12  left">
-										<div class="vc_col-sm-3 foter-detail wpb_column column_container vc_column_container col no-extra-padding"
-											data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
-											data-border-animation="" data-border-animation-delay=""
-											data-border-width="none" data-border-style="solid" data-border-color=""
-											data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
-											data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-											data-hover-bg-opacity="1" data-animation="" data-delay="0">
-											<div class="column-bg-overlay"></div>
-											<div class="vc_column-inner">
-												<div class="wpb_wrapper">
-
-													<div class="wpb_text_column wpb_content_element ">
-														<div class="wpb_wrapper">
-															<h3 style="text-align: left;">visit our office</h3>
-															<ul style="text-align: left;">
-																<li>
-																	<h2>Classic Play Sports</h2>
-																</li>
-																<li><span style="color: #799b0a;">Address:
-																	</span> Guhadpur Sialkot Pakistan</li>
-																<li><span style="color: #799b0a;"><span
-																			style="color: #799b0a;">Phone:       
-																		</span></span>+923235224881</li>
-																<li><span style="color: #799b0a;">NTN: </span>         
-																	  G904531-4</li>
-																<li><span style="color: #799b0a;"><span
-																			style="color: #799b0a;">whatsapp:</span>
-																	</span> +92300-6168646</li>
-																<li><span style="color: #799b0a;"><span
-																			style="color: #799b0a;">Email:</span>     
-																		 </span> classicplaysports786@gmail.com</li>
-															</ul>
-															<h3 style="text-align: left;">Get Connected</h3>
-															<p style="text-align: left;">Follow us on social networks!
-															</p>
-
-														</div>
-													</div>
-
-													<div class="wpb_text_column wpb_content_element ">
-														<div class="wpb_wrapper">
-															<div class="nectar-social full-width items_3"><a
-																	class="facebook" title="Facebook"
-																	href="#"
-																	target="_blank" rel="noopener noreferrer"> <i
-																		class="fa fa-facebook">Facebook</i> </a> <a
-																	class="instagram" title="Instagram"
-																	href="#"
-																	target="_blank" rel="noopener noreferrer"> <i
-																		class="fa fa-instagram">Instagram</i> </a> <a
-																	class="linkedin" title="Linkedin"
-																	href="#"
-																	target="_blank" rel="noopener noreferrer"> <i
-																		class="fa fa-linkedin">LinkedIn</i> </a><a
-																	class="tiktok" title="Tiktok"
-																	href="#"
-																	target="_blank" rel="noopener noreferrer"> <i
-																		class="fa fa-music">"Tiktok"</i> </a><a
-																	class="youtube" title="Youtube"
-																	href="#"
-																	target="_blank" rel="noopener noreferrer"> <i
-																		class="fa fa-youtube">"Youtube"</i> </a></div>
-
-														</div>
-													</div>
-
-												</div>
-											</div>
-										</div>
-
-										<div class="vc_col-sm-9 foter-contect wpb_column column_container vc_column_container col no-extra-padding"
-											data-t-w-inherits="default" data-shadow="none" data-border-radius="none"
-											data-border-animation="" data-border-animation-delay=""
-											data-border-width="none" data-border-style="solid" data-border-color=""
-											data-bg-cover="" data-padding-pos="all" data-has-bg-color="false"
-											data-bg-color="" data-bg-opacity="1" data-hover-bg=""
-											data-hover-bg-opacity="1" data-animation="" data-delay="0">
-											<div class="column-bg-overlay"></div>
-											<div class="vc_column-inner">
-												<div class="wpb_wrapper">
-													<div role="form" class="wpcf7" id="wpcf7-f6-p910-o2" lang="en-US"
-														dir="ltr">
-														<div class="screen-reader-response"></div>
-														<form action="" method="post"
-															class="wpcf7-form" novalidate="novalidate">
-											
-															<div class="form-field ">
-																<span class="wpcf7-form-control-wrap your-name">
-																	<input
-																		type="text" name="your-name" value="" size="40"
-																		class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required input-field"
-																		aria-required="true" aria-invalid="false"
-																		placeholder="Name *" required></span>
-															</div>
-															<div class="form-field ">
-																<span class="wpcf7-form-control-wrap email"><input
-																		type="email" name="email" value="" size="40"
-																		class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email input-field"
-																		aria-required="true" aria-invalid="false"
-																		placeholder="E-mail *" required></span>
-															</div>
-															<div class="form-field ">
-																<span class="wpcf7-form-control-wrap tel"><input
-																		type="tel" name="tel" value="" size="40"
-																		class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel input-field"
-																		aria-invalid="false"
-																		placeholder="Telephone*" required></span>
-															</div>
-															<div class="form-text-area">
-																<span class="wpcf7-form-control-wrap textarea"><textarea
-																		name="textarea" cols="40" rows="10"
-																		class="wpcf7-form-control wpcf7-textarea input-textarea"
-																		aria-invalid="false"
-																		placeholder="Message*" required></textarea></span>
-															</div>
-															<div class="form-butn">
-																<div id="form-message" style="margin-top: 10px; font-weight: bold;"></div>
-																<input type="submit" value="SEND IT" class="">
-															</div>
-															
-														</form>
-													</div>
-												</div>
-											</div>
-										</div>
-
-
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div><!--/row-->
-	</div><!--/container-->
+			</div><!--/row-->
+		</div><!--/container-->
 	</div><!--/container-wrap-->
-
 
 	<div id="footer-outer" data-midnight="light" data-cols="5" data-custom-color="true" data-disable-copyright="true"
 		data-matching-section-color="false" data-copyright-line="false" data-using-bg-img="false"
@@ -1679,7 +1752,8 @@ document.addEventListener("DOMContentLoaded", function () {
 					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-913"><a
 							href="#gallery">Gallery</a></li>
 					<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-914"><a
-							href="#contact">Contact</a></li>
+							href="javascript:void(0)" onclick="scrollToContact()"
+							>Contact</a></li>
 
 				</ul>
 
