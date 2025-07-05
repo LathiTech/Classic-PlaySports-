@@ -201,6 +201,44 @@
   }
 </script>
 
+<script>
+  function scrollTMenu() {
+    const contactTarget = document.querySelector('.extra-padding.menu');
+
+    if (contactTarget) {
+      const offset = 80; // fixed space from top (e.g., header height)
+
+      // Calculate top position relative to document
+      const elementTop = contactTarget.getBoundingClientRect().top + window.scrollY;
+
+      // Scroll to that position minus 80px offset
+      window.scrollTo({
+        top: elementTop - offset,
+        behavior: 'smooth'
+      });
+    }
+  }
+</script>
+
+<script>
+  function scrollTabout() {
+    const contactTarget = document.querySelector('.container.main-content');
+
+    if (contactTarget) {
+      const offset = 80; // fixed space from top (e.g., header height)
+
+      // Calculate top position relative to document
+      const elementTop = contactTarget.getBoundingClientRect().top + window.scrollY;
+
+      // Scroll to that position minus 80px offset
+      window.scrollTo({
+        top: elementTop - offset,
+        behavior: 'smooth'
+      });
+    }
+  }
+</script>
+
 
 
 
@@ -296,10 +334,13 @@
 							<ul class="sf-menu">
 								<li id="menu-item-911"
 									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-911"><a
-										href="#about">About</a></li>
+										href="javascript:void(0)" onclick="scrollTabout()"
+										
+										>About</a></li>
 								<li id="menu-item-912"
 									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-912"><a
-										href="#menu">Menu</a></li>
+									href="javascript:void(0)" onclick="scrollTMenu()"	
+									>Menu</a></li>
 								<li id="menu-item-913"
 									class="menu-item menu-item-type-custom menu-item-object-custom menu-item-913"><a
 									href="javascript:void(0)" onclick="scrollToGallery()"	
@@ -667,7 +708,7 @@
 														<div class="wpb_wrapper">
 
 															<div
-																class="col span_12 section-title text-align-center extra-padding">
+																class="col span_12 section-title text-align-center extra-padding menu">
 																<h2>
 																	<p style="text-align: center; color: #799b0a;">Our
 																		Sportswear Collections</p>
